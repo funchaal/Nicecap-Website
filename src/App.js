@@ -6,7 +6,7 @@ import googleplay_ic from './images/googleplay_ic.svg'
 import appstore_ic from './images/appstore_ic.svg'
 import playstoreqrcode from './images/playstoreqrcode.svg'
 import appstoreqrcode from './images/appstoreqrcode.svg'
-import logo from './images/iconbeauty.svg'
+import logo from './images/iconbeauty 2.svg'
 import eu from './images/eu 2.jpg'
 import vito from './images/vito.jpeg'
 import instagram_ic from './images/instagram.png'
@@ -17,18 +17,34 @@ import bff from './images/bff.jpeg'
 function App() {
   document.title = 'Nicecap'
 
+  function myfunc() {
+    if (document.getElementById('main_container').getAttribute('blocked') === 'yes') return
+
+    const el = Array.from(document.querySelectorAll('h2')).filter((val) => val.getBoundingClientRect().top > -150 && val.getBoundingClientRect().top < 400)
+
+    if (!el[0]) return
+    
+    const item = document.querySelector(`#header a[to='${el[0].id}']`).getBoundingClientRect().left
+
+    const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
+
+    const slider = document.getElementById('slider')
+    const pin = document.getElementById('pin')
+
+    slider.style.transform = `translateX(${item - pos_box}px)`
+    pin.style.transform = `translateX(${item - pos_box}px)`
+  }
+
   return (
     <main>
       <Header/>
-      <div id='main_container'>
+      <div id='main_container' onScroll={myfunc} blocked='no'>
         <div className='side left'>
-          <p className='default'>
-            <img src={logo} style={{ width: '80px', marginBottom: '20px' }}></img>
-          </p>
-          <h2 id='download'>Nicecap</h2>
+          <h2 id='download' style={{ margin: '0 auto', fontSize: '2.5em', fontWeight: 'bold' }}>NICECAP</h2>
+          <div className='text-divisor' style={{ margin: '0 auto', marginBottom: '40px' }}></div>
           <p className='default'>
           A proposta se baseia em um sistema com sensor de aproximação acoplado a um boné que alerta o usuário com um sinal sonoro ao aproximar de um obstáculo. O sistema ainda conta com um app próprio para personalização do usuário. Uma vez que cerca de 22% da população santista tem algum tipo de deficiência, sendo que 54% desses são deficientes visuais, este projeto será útil para promover maior segurança aos deficientes ao se locomoverem no meio urbano.
-                <label style={{ marginTop: '40px', fontWeight: 400 }}>Download app</label>
+                <label style={{ marginTop: '50px', marginBottom: '20px', fontWeight: 600 }}>Download app</label>
             <div className='download'>
               <div>
                 <button type='button'><img src={googleplay_ic}></img>Android apk</button>
@@ -37,6 +53,7 @@ function App() {
                   <img src={playstoreqrcode}></img>
                 </div>
               </div>
+              <div className='white-divisor download'></div>
               <div>
                 <button type='button' className='ios'><img src={appstore_ic}></img>Ios obb</button>
                 <label>App Store QR Code</label>
@@ -48,6 +65,7 @@ function App() {
           </p>
           <div className='divisor'></div>
               <h2 id='about'>Sobre</h2>
+          <div className='text-divisor'></div>
               <p className='default'>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</p>
             <p className='default'>
               <iframe
@@ -60,7 +78,8 @@ function App() {
             </p>
             <p className='default'>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</p>
             <div className='divisor'></div>
-            <h2>Autores</h2>
+            <h2 id='autors' name='autors'>Autores</h2>
+          <div className='text-divisor'></div>
             <p className='default'>Esse projeto foi idealizado e construído por três principais autores, Marco Antonio Vieira Lopes Rubens, Rafael Funchal e Vitor Henrique Funchal Nascimento.
             <div id='autors' name='autors' className='instagram-ctn'>
               <div className='instagram-box'>
@@ -87,8 +106,9 @@ function App() {
                   <a href='https://www.linkedin.com/in/vitor-funchal-286111206'><img src={linkedin_ic}></img>linkedin</a>
                 </div>
               </div>
+              <div className='divisor' style={{ position: 'absolute', bottom: '-50px', margin: 0 }}></div>
             </div>
-            <h3>Colaboradores</h3>
+            <span>Colaboradores</span>
             <div id='autors' name='autors' className='instagram-ctn'>
               <div className='instagram-box'>
                 <img src={eu}></img>
@@ -104,6 +124,18 @@ function App() {
                 <div className='social'>
                   <a href='https://www.instagram.com/liviasantanacm/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>liviasantanacm</a>
                   {/* <a href='https://www.linkedin.com/in/vitor-funchal-286111206'><img src={linkedin_ic}></img>linkedin</a> */}
+                </div>
+              </div>
+            <div className='divisor' style={{ position: 'absolute', bottom: '-50px', margin: 0 }}></div>
+            </div>
+            <span>Orientadora</span>
+            <div className='instagram-ctn'>
+              <div className='instagram-box'>
+                <img src={eu}></img>
+                <span className='name'>Aline Patriota</span>
+                <div className='social'>
+                  <a href='https://www.instagram.com/palominhaab_soaress/' style={{ marginBottom: '5px', fontSize: '0.6em' }}><img src={instagram_ic}></img>palominhaab_soaress</a>
+                  {/* <a href='https://www.linkedin.com/in/marco-vieira-1a910a240'><img src={linkedin_ic}></img>linkedin</a> */}
                 </div>
               </div>
             </div>

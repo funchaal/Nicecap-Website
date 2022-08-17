@@ -52,17 +52,20 @@ html, body, #root {
 }
 
 .side.left {
-  /* padding: 0 10px; */
   max-width: calc(100% - 40px);
   padding-top: 130px;
 }
 
 iframe {
   border-radius: 20px;
-  width: calc(40vw - 10px);
-  height: calc((40vw*9/16) - 10px);
+  width: calc(40vw);
+  height: calc((40vw*9/16));
+  min-width: 500px;
+  min-height: 281.25px;
   margin: 30px;
-  align-self: flex-start;
+  margin-left: 20px;
+  border: 2px solid cyan;
+  /* box-shadow: 0px 0px 10px 0px rgba(0, 255, 255, 0.8); */
 }
 
 main {
@@ -73,6 +76,7 @@ main {
 
 #header {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100vw;
@@ -84,20 +88,44 @@ main {
   background-color: rgb(33, 33, 33);
 }
 
+#header #slider {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background-color: rgba(211, 211, 211, 0.275);
+  border-radius: 10px;
+  transition-duration: 300ms;
+}
+
+#header #pin {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(0, 38, 255);
+  border-radius: 10px;
+  transition-duration: 300ms;
+}
+
 #header button {
-  padding: 8px 15px;
+  position: relative;
+  z-index: 1;
   border-radius: 10px;
   color: white;
-  margin: 0 2px;
-  font-size: 0.8em;
-  font-weight: bold;
+  margin-right: 4px;
+  font-size: 0.9em;
   width: 100px;
+  height: 30px;
+  overflow: hidden;
   background-color: transparent;
 }
 
-#header button.on {
-  pointer-events: none;
-  background-color: rgb(0, 60, 255);
+#header button a {
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 #header span {
@@ -112,15 +140,16 @@ main {
   flex-direction: row;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 h2 {
   color: white;
   margin: 0;
   font-weight: 400;
-  font-size: 3em;
-  margin-bottom: 15px;
+  font-size: 2.8em;
 }
 
 .default {
@@ -132,6 +161,10 @@ h2 {
   max-width: 48vw;
   min-width: 700px;
   margin-bottom: 20px;
+}
+
+.default > span {
+  font-size: 1.17em;
 }
 
 .download {
@@ -177,9 +210,9 @@ h2 {
 }
 
 .download div > div {
-  border: 10px solid white;
+  border: 4px solid white;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 /* .download button {
@@ -202,13 +235,26 @@ h2 {
   animation: divisor-image 400ms ease-out forwards;
 }
 
+.white-divisor {
+  content: '';
+  min-height: 4px;
+  width: 100px;
+  border-radius: 10px;
+  margin: 40px auto;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
 .text-divisor {
   content: '';
-  min-height: 3px;
-  width: 200px;
+  min-height: 4px;
+  width: 50px;
   border-radius: 10px;
   margin-bottom: 15px;
-  background: rgba(255, 255, 255, 0.604);
+  background: rgb(0, 38, 255);
+}
+
+.white-divisor.download {
+  display: none;
 }
 
 @keyframes divisor-image {
@@ -216,19 +262,20 @@ h2 {
     width: 0px;
   }
   to {
-    width: 40%;
+    width: 50%;
   }
 }
 
 .instagram-ctn {
-  width: 100%;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 15px;
+  align-items: center;
+  margin-top: 30px;
   margin-bottom: 100px;
-  padding-left: 20px;
-  padding-right: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .instagram-box {
@@ -250,7 +297,7 @@ h2 {
   border-radius: 50%;
   margin-top: 15px;
   /* border: 1px solid black; */
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.6);
 }
 
 .instagram-box .name {
@@ -287,12 +334,61 @@ h2 {
   margin-right: 5px;
 }
 
-@media (max-width: 550px) {
-  .download {
+@media (max-width: 500px) {
+  #main_container::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(128, 128, 128, 0.253);
+  }
+
+  #main_container::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  #main_container::-webkit-scrollbar-track-piece {
+    height: 50px;
+  }
+}
+
+#logo {
+  height: 40%;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  .logo-box {
+    flex-grow: 1;
+  }
+
+  #header {
+    height: 90px;
     flex-direction: column;
   }
-  .download button.ios {
-    margin-top: 50px;
+
+  #logo {
+    height: 30%;
+  }
+
+  .white-divisor.download {
+    display: block;
+  }
+
+  iframe {
+    width: calc(100vw - 80px);
+    height: calc((100vw - 80px) * 9/16);
+    min-width: unset;
+    min-height: unset;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .download {
+    flex-direction: column;
   }
 }
 
@@ -305,11 +401,5 @@ h2 {
   .instagram-ctn {
     flex-direction: column;
     align-items: center;
-    padding: 0;
-  }
-
-  .instagram-box {
-    min-width: 280px;
-    min-height: 328px;
   }
 }
