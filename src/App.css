@@ -126,11 +126,13 @@ main {
   align-items: center;
   width: 100%;
   height: 100%;
+  color: white;
+  opacity: 80%;
   transition-duration: 200ms;
 }
 
 #header button a.on {
-  color: white;
+  opacity: 100%;
 }
 
 #header span {
@@ -258,6 +260,15 @@ h2 {
   background: rgb(0, 38, 255);
 }
 
+.instagram-divisor {
+  content: '';
+  height: 2px;
+  margin-top: 5px;
+  width: 70px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.347);
+}
+
 .white-divisor.download {
   display: none;
 }
@@ -284,12 +295,13 @@ h2 {
 }
 
 .instagram-box {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 198px;
   max-width: 198px;
-  height: 250px;
+  height: 270px;
   margin: 15px;
   background-color: rgba(255, 255, 255, 0.941);
   border-radius: 20px;
@@ -300,9 +312,9 @@ h2 {
   display: block;
   margin: 0 auto;
   border-radius: 50%;
-  margin-top: 15px;
+  margin-top: 20px;
   /* border: 1px solid black; */
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.6);
 }
 
 .instagram-box .name {
@@ -318,10 +330,12 @@ h2 {
 .instagram-box .social {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   justify-content: flex-end;
   width: 100%;
   padding-bottom: 15px;
+  position: absolute;
+  bottom: 0;
 }
 
 .instagram-box .social a {
@@ -334,8 +348,8 @@ h2 {
 }
 
 .instagram-box .social a img {
+  display: block;
   width: 16px;
-  height: 16px;
   margin-right: 5px;
 }
 
@@ -382,7 +396,7 @@ h2 {
   }
 
   #header #pin {
-    height: 5px;
+    height: 4px;
     bottom: 0;
     background-color: #0055ff;
   }

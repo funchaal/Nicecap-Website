@@ -13,6 +13,8 @@ import instagram_ic from './images/instagram.png'
 import linkedin_ic from './images/linkedin.png'
 import marco from './images/marques.jpeg'
 import bff from './images/bff.jpeg'
+import paloma from './images/pamolo.jpeg'
+import rf from './images/rf.svg'
 
 function App() {
   document.title = 'Nicecap'
@@ -28,7 +30,7 @@ function App() {
 
     document.querySelectorAll('#header .box a').forEach((el) => el.classList.remove('on'))
     item.classList.add('on')
-    
+
     const item_pos = item.getBoundingClientRect().left
 
     const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
@@ -90,6 +92,7 @@ function App() {
               <div className='instagram-box'>
                 <img src={marco}></img>
                 <span className='name'>Marco Vieira</span>
+                <div className='instagram-divisor'></div>
                 <div className='social'>
                   <a href='https://www.instagram.com/marcoo_vieira/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>marcoo_vieira</a>
                   <a><img src={linkedin_ic}></img>linkedin</a>
@@ -98,14 +101,17 @@ function App() {
               <div className='instagram-box'>
                 <img src={eu}></img>
                 <span className='name'>Rafael Funchal</span>
+                <div className='instagram-divisor'></div>
                 <div className='social'>
                   <a href='https://www.instagram.com/rafaelfunchal_/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>rafaelfunchal_</a>
-                  <a href='https://www.linkedin.com/in/marco-vieira-1a910a240'><img src={linkedin_ic}></img>linkedin</a>
+                  <a href='https://www.linkedin.com/in/marco-vieira-1a910a240' style={{ marginBottom: '5px' }}><img src={linkedin_ic}></img>linkedin</a>
+                  <a href='https://www.linkedin.com/in/marco-vieira-1a910a240'><img src={rf}></img>site</a>
                 </div>
               </div>
               <div className='instagram-box'>
                 <img src={vito}></img>
                 <span className='name'>Vitor Funchal</span>
+                <div className='instagram-divisor'></div>
                 <div className='social'>
                   <a href='https://www.instagram.com/funchal_006/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>funchal_006</a>
                   <a href='https://www.linkedin.com/in/vitor-funchal-286111206'><img src={linkedin_ic}></img>linkedin</a>
@@ -116,8 +122,9 @@ function App() {
             <span>Colaboradores</span>
             <div id='autors' name='autors' className='instagram-ctn'>
               <div className='instagram-box'>
-                <img src={eu}></img>
+                <img src={paloma}></img>
                 <span className='name'>Paloma Soares</span>
+                <div className='instagram-divisor'></div>
                 <div className='social'>
                   <a href='https://www.instagram.com/palominhaab_soaress/' style={{ marginBottom: '5px', fontSize: '0.6em' }}><img src={instagram_ic}></img>palominhaab_soaress</a>
                   {/* <a href='https://www.linkedin.com/in/marco-vieira-1a910a240'><img src={linkedin_ic}></img>linkedin</a> */}
@@ -126,6 +133,7 @@ function App() {
               <div className='instagram-box'>
                 <img src={bff}></img>
                 <span className='name'>Livia Santana</span>
+                <div className='instagram-divisor'></div>
                 <div className='social'>
                   <a href='https://www.instagram.com/liviasantanacm/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>liviasantanacm</a>
                   {/* <a href='https://www.linkedin.com/in/vitor-funchal-286111206'><img src={linkedin_ic}></img>linkedin</a> */}
