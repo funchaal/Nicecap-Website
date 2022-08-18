@@ -27,10 +27,11 @@ function Header() {
             const pos_pin = document.getElementById('pin').getBoundingClientRect().left
     
             slider.style.transform = `translateX(${pos_pin - pos_box}px)`
-        }, 1000)
+        }, 500)
     }
 
     function click(e) {
+        setTimeout(() => document.getElementById('main_container').setAttribute('blocked', 'no'), 500)
         const pos = e.target.getBoundingClientRect().left
         const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
 
