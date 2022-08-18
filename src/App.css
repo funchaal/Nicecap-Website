@@ -373,7 +373,9 @@ h2 {
 
 @media (max-width: 600px) {
   #header #pin {
-    height: 32px;
+    height: 5px;
+    bottom: 0;
+    background-color: #006fff;
   }
 
   #header button {
