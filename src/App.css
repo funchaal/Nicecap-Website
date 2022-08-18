@@ -396,7 +396,7 @@ h2 {
   #header {
     height: 50px;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   #logo {
