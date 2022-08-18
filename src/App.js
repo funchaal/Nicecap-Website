@@ -14,7 +14,9 @@ import linkedin_ic from './images/linkedin.png'
 import marco from './images/marques.jpeg'
 import bff from './images/bff.jpeg'
 import paloma from './images/pamolo.jpeg'
+import aline from './images/aline.jpeg'
 import rf from './images/rf.svg'
+import proto from './images/proto.jpg'
 
 function App() {
   document.title = 'Nicecap'
@@ -83,7 +85,15 @@ function App() {
                 title="Vídeo base"
               />
             </p>
-            <p className='default'>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</p>
+            <p className='default'>
+            <span>Como surgiu</span>
+              Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</p>
+            <p className='default'>
+            <span>Como foi feito</span>
+              Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.
+              <img src={proto}></img>
+              Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.
+              </p>
             <div className='divisor'></div>
             <h2 id='autors' name='autors'>Autores</h2>
           <div className='text-divisor'></div>
@@ -94,8 +104,8 @@ function App() {
                 <span className='name'>Marco Vieira</span>
                 <div className='instagram-divisor'></div>
                 <div className='social'>
-                  <a href='https://www.instagram.com/marcoo_vieira/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>marcoo_vieira</a>
-                  <a><img src={linkedin_ic}></img>linkedin</a>
+                  <a target='_blank' href='https://www.instagram.com/marcoo_vieira/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>marcoo_vieira</a>
+                  <a target='_blank'><img src={linkedin_ic}></img>linkedin</a>
                 </div>
               </div>
               <div className='instagram-box'>
@@ -103,9 +113,9 @@ function App() {
                 <span className='name'>Rafael Funchal</span>
                 <div className='instagram-divisor'></div>
                 <div className='social'>
-                  <a href='https://www.instagram.com/rafaelfunchal_/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>rafaelfunchal_</a>
-                  <a href='https://www.linkedin.com/in/marco-vieira-1a910a240' style={{ marginBottom: '5px' }}><img src={linkedin_ic}></img>linkedin</a>
-                  <a href='https://www.linkedin.com/in/marco-vieira-1a910a240'><img src={rf}></img>site</a>
+                  <a target='_blank' href='https://www.instagram.com/rafaelfunchal_/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>rafaelfunchal_</a>
+                  <a target='_blank' href='https://linkedin.com/in/rafael-funchal/' style={{ marginBottom: '5px' }}><img src={linkedin_ic}></img>linkedin</a>
+                  <a target='_blank' href='https://rafaelfunchal.vercel.app'><img src={rf}></img>site</a>
                 </div>
               </div>
               <div className='instagram-box'>
@@ -113,21 +123,21 @@ function App() {
                 <span className='name'>Vitor Funchal</span>
                 <div className='instagram-divisor'></div>
                 <div className='social'>
-                  <a href='https://www.instagram.com/funchal_006/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>funchal_006</a>
-                  <a href='https://www.linkedin.com/in/vitor-funchal-286111206'><img src={linkedin_ic}></img>linkedin</a>
+                  <a target='_blank' href='https://www.instagram.com/funchal_006/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>funchal_006</a>
+                  <a target='_blank' href='https://www.linkedin.com/in/vitor-funchal-286111206'><img src={linkedin_ic}></img>linkedin</a>
                 </div>
               </div>
               <div className='divisor' style={{ position: 'absolute', bottom: '-50px', margin: 0 }}></div>
             </div>
-            <span>Colaboradores</span>
+            <span style={{ marginBottom: 0 }}>Colaboradores</span>
             <div id='autors' name='autors' className='instagram-ctn'>
               <div className='instagram-box'>
                 <img src={paloma}></img>
                 <span className='name'>Paloma Soares</span>
                 <div className='instagram-divisor'></div>
                 <div className='social'>
-                  <a href='https://www.instagram.com/palominhaab_soaress/' style={{ marginBottom: '5px', fontSize: '0.6em' }}><img src={instagram_ic}></img>palominhaab_soaress</a>
-                  {/* <a href='https://www.linkedin.com/in/marco-vieira-1a910a240'><img src={linkedin_ic}></img>linkedin</a> */}
+                  <a target='_blank' href='https://www.instagram.com/palominhaab_soaress/' style={{ fontSize: '0.6em' }}><img src={instagram_ic}></img>palominhaab_soaress</a>
+                  {/* <a target='_blank' href='https://www.linkedin.com/in/marco-vieira-1a910a240'><img src={linkedin_ic}></img>linkedin</a> */}
                 </div>
               </div>
               <div className='instagram-box'>
@@ -135,20 +145,21 @@ function App() {
                 <span className='name'>Livia Santana</span>
                 <div className='instagram-divisor'></div>
                 <div className='social'>
-                  <a href='https://www.instagram.com/liviasantanacm/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>liviasantanacm</a>
-                  {/* <a href='https://www.linkedin.com/in/vitor-funchal-286111206'><img src={linkedin_ic}></img>linkedin</a> */}
+                  <a target='_blank' href='https://www.instagram.com/liviasantanacm/'><img src={instagram_ic}></img>liviasantanacm</a>
+                  {/* <a target='_blank' href='https://www.linkedin.com/in/vitor-funchal-286111206'><img src={linkedin_ic}></img>linkedin</a> */}
                 </div>
               </div>
             <div className='divisor' style={{ position: 'absolute', bottom: '-50px', margin: 0 }}></div>
             </div>
-            <span>Orientadora</span>
+            <span style={{ marginBottom: 0 }}>Orientadora</span>
             <div className='instagram-ctn'>
               <div className='instagram-box'>
-                <img src={eu}></img>
+                <img src={aline}></img>
                 <span className='name'>Aline Patriota</span>
+                <div className='instagram-divisor'></div>
                 <div className='social'>
-                  <a href='https://www.instagram.com/palominhaab_soaress/' style={{ marginBottom: '5px', fontSize: '0.6em' }}><img src={instagram_ic}></img>palominhaab_soaress</a>
-                  {/* <a href='https://www.linkedin.com/in/marco-vieira-1a910a240'><img src={linkedin_ic}></img>linkedin</a> */}
+                  <a target='_blank' href='https://www.instagram.com/alinepatriota/'><img src={instagram_ic}></img>alinepatriota</a>
+                  {/* <a target='_blank' href='https://www.linkedin.com/in/marco-vieira-1a910a240'><img src={linkedin_ic}></img>linkedin</a> */}
                 </div>
               </div>
             </div>
