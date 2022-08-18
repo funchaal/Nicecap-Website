@@ -31,8 +31,10 @@ function Header() {
     }
 
     function click(e) {
-        setTimeout(() => document.getElementById('main_container').setAttribute('blocked', 'no'), 500)
+        setTimeout(() => document.getElementById('main_container').setAttribute('blocked', 'no'), 550)
         const pos = e.target.getBoundingClientRect().left
+        document.querySelectorAll('#header .box a').forEach((el) => el.classList.remove('on'))
+        e.target.classList.add('on')
         const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
 
         const pin = document.getElementById('pin')

@@ -126,6 +126,11 @@ main {
   align-items: center;
   width: 100%;
   height: 100%;
+  transition-duration: 200ms;
+}
+
+#header button a.on {
+  color: white;
 }
 
 #header span {
@@ -349,9 +354,6 @@ h2 {
 }
 
 @media (max-width: 499px) {
-  #header #slider {
-    opacity: 0;
-  }
   #header {
     background-color: #383838;
   }
@@ -372,10 +374,17 @@ h2 {
 }
 
 @media (max-width: 600px) {
+  #header #slider {
+    opacity: 0;
+  }
+  .text-divisor {
+    background-color: #0055ff;
+  }
+
   #header #pin {
     height: 5px;
     bottom: 0;
-    background-color: #006fff;
+    background-color: #0055ff;
   }
 
   #header button {

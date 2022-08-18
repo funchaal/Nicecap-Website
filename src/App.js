@@ -24,15 +24,20 @@ function App() {
 
     if (!el[0]) return
     
-    const item = document.querySelector(`#header a[to='${el[0].id}']`).getBoundingClientRect().left
+    const item = document.querySelector(`#header a[to='${el[0].id}']`)
+
+    document.querySelectorAll('#header .box a').forEach((el) => el.classList.remove('on'))
+    item.classList.add('on')
+    
+    const item_pos = item.getBoundingClientRect().left
 
     const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
 
     const slider = document.getElementById('slider')
     const pin = document.getElementById('pin')
 
-    slider.style.transform = `translateX(${item - pos_box}px)`
-    pin.style.transform = `translateX(${item - pos_box}px)`
+    slider.style.transform = `translateX(${item_pos - pos_box}px)`
+    pin.style.transform = `translateX(${item_pos - pos_box}px)`
   }
 
   return (
