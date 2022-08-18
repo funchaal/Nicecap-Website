@@ -101,7 +101,7 @@ main {
   position: absolute;
   width: 100px;
   height: 30px;
-  background-color: rgb(0, 48, 255);
+  background-color: rgb(0, 0, 255);
   border-radius: 10px;
   transition-duration: 300ms;
 }
@@ -373,11 +373,11 @@ h2 {
 
 @media (max-width: 600px) {
   #header #pin {
-    height: 35px;
+    height: 32px;
   }
 
   #header button {
-    height: 35px;
+    height: 32px;
   }
 
   #header button a {
@@ -394,7 +394,7 @@ h2 {
   }
 
   #header {
-    height: 50px;
+    height: 45px;
     flex-direction: column;
     justify-content: center;
   }
