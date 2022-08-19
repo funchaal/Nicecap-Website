@@ -54,7 +54,9 @@ function App() {
           <h2 id='download' style={{ margin: '0 auto', fontSize: '2.5em', fontWeight: 'bold' }}>NICECAP</h2>
           <div className='text-divisor' style={{ margin: '0 auto', marginBottom: '40px' }}></div>
           <div className='default'>
+            <p>
           A proposta se baseia em um sistema com sensor de aproximação acoplado a um boné que alerta o usuário com um sinal sonoro ao aproximar de um obstáculo. O sistema ainda conta com um app próprio para personalização do usuário. Uma vez que cerca de 22% da população santista tem algum tipo de deficiência, sendo que 54% desses são deficientes visuais, este projeto será útil para promover maior segurança aos deficientes ao se locomoverem no meio urbano.
+          </p>
                 <label style={{ marginTop: '50px', marginBottom: '20px', fontWeight: 600 }}>Download app</label>
             <div className='download'>
               <div>
@@ -77,7 +79,8 @@ function App() {
           <div className='divisor'></div>
               <h2 id='about'>Sobre</h2>
           <div className='text-divisor'></div>
-              <div className='default'>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</div>
+              <div className='default'>
+              <p>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</p></div>
             <div className='default'>
               <iframe
                 src={`https://www.youtube.com/embed/ZpZaRejnOxE`}
@@ -89,19 +92,20 @@ function App() {
             </div>
             <div className='default'>
             <span>Como surgiu</span>
-              Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</div>
+            <p>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</p></div>
             <div className='default'>
             <span>Como foi feito</span>
-              Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.
+            <p>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</p>
               <img src={model}></img>
-              Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.
+              <p>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</p>
               <img src={proto}></img>
-              Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.
+              <p>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</p>
               </div>
             <div className='divisor'></div>
             <h2 id='autors' name='autors'>Autores</h2>
           <div className='text-divisor'></div>
-            <div className='default'>Esse projeto foi idealizado e construído por três principais autores, Marco Antonio Vieira Lopes Rubens, Rafael Funchal e Vitor Henrique Funchal Nascimento.
+            <div className='default'>
+            <p>Esse projeto foi idealizado e construído por três principais autores, Marco Antonio Vieira Lopes Rubens, Rafael Funchal e Vitor Henrique Funchal Nascimento.</p>
             <div id='autors' name='autors' className='instagram-ctn'>
               <div className='instagram-box'>
                 <img src={marco}></img>

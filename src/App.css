@@ -173,6 +173,12 @@ h2 {
   margin-bottom: 20px;
 }
 
+.default > p {
+  width: 100%;
+  font-size: 1.1em;
+  line-height: normal;
+}
+
 .default > img {
   width: 40vw;
   border-radius: 20px;
@@ -468,7 +474,7 @@ h2 {
 }
 
 @media (max-width: 750px) {
-  p.default {
+  .default {
     max-width: 100%;
     min-width: 100%;
   }
