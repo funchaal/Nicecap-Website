@@ -21,8 +21,12 @@ import proto from './images/proto.jpg'
 function App() {
   document.title = 'Nicecap'
 
+  let scrolling = false
+
+  document.getElementById('main_container').onwheel = () => scrolling = true
+
   function myfunc() {
-    if (document.getElementById('main_container').getAttribute('blocked') === 'yes') return
+    if (!scrolling) return
 
     const el = Array.from(document.querySelectorAll('h2')).filter((val) => val.getBoundingClientRect().top > -150 && val.getBoundingClientRect().top < 400)
 
@@ -42,6 +46,7 @@ function App() {
 
     slider.style.transform = `translateX(${item_pos - pos_box}px)`
     pin.style.transform = `translateX(${item_pos - pos_box}px)`
+    scrolling = false
   }
 
   return (

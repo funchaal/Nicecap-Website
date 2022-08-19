@@ -1,11 +1,8 @@
 import logo from '../images/iconbeauty 2.svg'
 
 function Header() {
-
-    let time
-
     function mouseMove(e) {
-        document.getElementById('main_container').setAttribute('blocked', 'yes')
+        if (e.target.tagName !== 'A') return
 
         const el = document.elementFromPoint(e.clientX, e.clientY)
         const pos = el.getBoundingClientRect().left
@@ -14,24 +11,20 @@ function Header() {
         const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
 
         slider.style.transform = `translateX(${pos - pos_box}px)`
-
-        time && clearTimeout(time)
     }
 
     function mouseOut(e) {
-        time = setTimeout(() => {
-            document.getElementById('main_container').setAttribute('blocked', 'no')
+        console.log(e.target)
+        document.getElementById('main_container').setAttribute('blocked', 'no')
 
-            const slider = document.getElementById('slider')
-            const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
-            const pos_pin = document.getElementById('pin').getBoundingClientRect().left
-    
-            slider.style.transform = `translateX(${pos_pin - pos_box}px)`
-        }, 500)
+        const slider = document.getElementById('slider')
+        const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
+        const pos_pin = document.getElementById('pin').getBoundingClientRect().left
+
+        slider.style.transform = `translateX(${pos_pin - pos_box}px)`
     }
 
     function click(e) {
-        setTimeout(() => document.getElementById('main_container').setAttribute('blocked', 'no'), 550)
         const pos = e.target.getBoundingClientRect().left
         document.querySelectorAll('#header .box a').forEach((el) => el.classList.remove('on'))
         e.target.classList.add('on')
@@ -43,6 +36,7 @@ function Header() {
         const top = document.getElementById(e.target.getAttribute('to')).getBoundingClientRect().top
         const scroll = document.getElementById('main_container').scrollTop
         document.getElementById('main_container').scrollTop = top - 130 + scroll
+        // setTimeout(() => document.getElementById('main_container').setAttribute('blocked', 'no'), 550)
     }
 
     return (
@@ -50,7 +44,7 @@ function Header() {
             <div className='logo-box'>
                 <img src={logo} id='logo'></img>
             </div>
-            <div class='box' onMouseMove={mouseMove} onMouseOut={mouseOut}>
+            <div class='box' onMouseMove={mouseMove} onMouseLeave={mouseOut}>
                 <div id='slider'></div>
                 <div id='pin'></div>
                 <button type='button' className='on' onClick={click}><a to='download'>Download</a></button>
