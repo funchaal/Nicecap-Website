@@ -21,12 +21,12 @@ import proto from './images/proto.jpg'
 function App() {
   document.title = 'Nicecap'
 
-  let scrolling = false
+  window.isScrolling = false
 
-  document.getElementById('main_container').onwheel = () => scrolling = true
+  // document.getElementById('main_container').onwheel = () => scrolling = true
 
   function myfunc() {
-    if (!scrolling) return
+    if (window.isScrolling) return
 
     const el = Array.from(document.querySelectorAll('h2')).filter((val) => val.getBoundingClientRect().top > -150 && val.getBoundingClientRect().top < 400)
 
@@ -44,9 +44,7 @@ function App() {
     const slider = document.getElementById('slider')
     const pin = document.getElementById('pin')
 
-    slider.style.transform = `translateX(${item_pos - pos_box}px)`
     pin.style.transform = `translateX(${item_pos - pos_box}px)`
-    scrolling = false
   }
 
   return (

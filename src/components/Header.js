@@ -25,6 +25,7 @@ function Header() {
     }
 
     function click(e) {
+        window.isScrolling = true
         const pos = e.target.getBoundingClientRect().left
         document.querySelectorAll('#header .box a').forEach((el) => el.classList.remove('on'))
         e.target.classList.add('on')
@@ -36,7 +37,7 @@ function Header() {
         const top = document.getElementById(e.target.getAttribute('to')).getBoundingClientRect().top
         const scroll = document.getElementById('main_container').scrollTop
         document.getElementById('main_container').scrollTop = top - 130 + scroll
-        // setTimeout(() => document.getElementById('main_container').setAttribute('blocked', 'no'), 550)
+        setTimeout(() => window.isScrolling = false, 550)
     }
 
     return (
