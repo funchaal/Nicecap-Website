@@ -1,7 +1,10 @@
 import logo from '../images/iconbeauty 2.svg'
 
 function Header() {
+    let time = 0
     function mouseMove(e) {
+        window.ok = false
+        clearTimeout(time)
         if (e.target.tagName !== 'A') return
 
         const el = document.elementFromPoint(e.clientX, e.clientY)
@@ -12,19 +15,19 @@ function Header() {
 
         slider.style.transform = `translateX(${pos - pos_box}px)`
     }
-
+    
     function mouseOut(e) {
-        console.log(e.target)
-        document.getElementById('main_container').setAttribute('blocked', 'no')
-
-        const slider = document.getElementById('slider')
-        const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
-        const pos_pin = document.getElementById('pin').getBoundingClientRect().left
-
-        slider.style.transform = `translateX(${pos_pin - pos_box}px)`
+        time = setTimeout(() => {
+            const slider = document.getElementById('slider')
+            const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
+            const pos_pin = document.getElementById('pin').getBoundingClientRect().left
+            slider.style.transform = `translateX(${pos_pin - pos_box}px)`
+        }, 300)
+        window.ok = true
     }
-
+    
     function click(e) {
+        window.ok = true
         window.isScrolling = true
         const pos = e.target.getBoundingClientRect().left
         document.querySelectorAll('#header .box a').forEach((el) => el.classList.remove('on'))

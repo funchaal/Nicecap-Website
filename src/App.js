@@ -17,13 +17,12 @@ import paloma from './images/pamolo.jpeg'
 import aline from './images/aline.jpeg'
 import rf from './images/rf.svg'
 import proto from './images/proto.jpg'
+import model from './images/model.png'
 
 function App() {
   document.title = 'Nicecap'
 
-  window.isScrolling = false
-
-  // document.getElementById('main_container').onwheel = () => scrolling = true
+  window.ok = true
 
   function myfunc() {
     if (window.isScrolling) return
@@ -40,11 +39,11 @@ function App() {
     const item_pos = item.getBoundingClientRect().left
 
     const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
-
-    const slider = document.getElementById('slider')
     const pin = document.getElementById('pin')
+    const slider = document.getElementById('slider')
 
     pin.style.transform = `translateX(${item_pos - pos_box}px)`
+    if (window.ok) slider.style.transform = `translateX(${item_pos - pos_box}px)`
   }
 
   return (
@@ -54,7 +53,7 @@ function App() {
         <div className='side left'>
           <h2 id='download' style={{ margin: '0 auto', fontSize: '2.5em', fontWeight: 'bold' }}>NICECAP</h2>
           <div className='text-divisor' style={{ margin: '0 auto', marginBottom: '40px' }}></div>
-          <p className='default'>
+          <div className='default'>
           A proposta se baseia em um sistema com sensor de aproximação acoplado a um boné que alerta o usuário com um sinal sonoro ao aproximar de um obstáculo. O sistema ainda conta com um app próprio para personalização do usuário. Uma vez que cerca de 22% da população santista tem algum tipo de deficiência, sendo que 54% desses são deficientes visuais, este projeto será útil para promover maior segurança aos deficientes ao se locomoverem no meio urbano.
                 <label style={{ marginTop: '50px', marginBottom: '20px', fontWeight: 600 }}>Download app</label>
             <div className='download'>
@@ -74,12 +73,12 @@ function App() {
                 </div>
               </div>
             </div>
-          </p>
+          </div>
           <div className='divisor'></div>
               <h2 id='about'>Sobre</h2>
           <div className='text-divisor'></div>
-              <p className='default'>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</p>
-            <p className='default'>
+              <div className='default'>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</div>
+            <div className='default'>
               <iframe
                 src={`https://www.youtube.com/embed/ZpZaRejnOxE`}
                 frameBorder="0"
@@ -87,20 +86,22 @@ function App() {
                 allowFullScreen
                 title="Vídeo base"
               />
-            </p>
-            <p className='default'>
+            </div>
+            <div className='default'>
             <span>Como surgiu</span>
-              Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</p>
-            <p className='default'>
+              Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</div>
+            <div className='default'>
             <span>Como foi feito</span>
+              Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.
+              <img src={model}></img>
               Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.
               <img src={proto}></img>
               Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.
-              </p>
+              </div>
             <div className='divisor'></div>
             <h2 id='autors' name='autors'>Autores</h2>
           <div className='text-divisor'></div>
-            <p className='default'>Esse projeto foi idealizado e construído por três principais autores, Marco Antonio Vieira Lopes Rubens, Rafael Funchal e Vitor Henrique Funchal Nascimento.
+            <div className='default'>Esse projeto foi idealizado e construído por três principais autores, Marco Antonio Vieira Lopes Rubens, Rafael Funchal e Vitor Henrique Funchal Nascimento.
             <div id='autors' name='autors' className='instagram-ctn'>
               <div className='instagram-box'>
                 <img src={marco}></img>
@@ -166,7 +167,7 @@ function App() {
                 </div>
               </div>
             </div>
-            </p>
+            </div>
         </div>
       </div>
     </main>
