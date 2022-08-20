@@ -24,12 +24,22 @@ function App() {
 
   window.ok = true
 
-  function myfunc() {
-
+  window.onresize = () => {
     const header = document.getElementById('header')
     const main_container = document.getElementById('main_container')
 
-    if (main_container.scrollTop > 10) {
+    if (window.innerWidth < 600 && main_container.scrollTop > 10) {
+      header.style.transform = 'translateY(-35px)'
+    } else {
+      header.style.transform = 'translateY(0)'
+    }
+  }
+
+  function myfunc() {
+    const header = document.getElementById('header')
+    const main_container = document.getElementById('main_container')
+
+    if (window.innerWidth < 600 && main_container.scrollTop > 10) {
       header.style.transform = 'translateY(-35px)'
     } else {
       header.style.transform = 'translateY(0)'
