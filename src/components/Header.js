@@ -9,10 +9,10 @@ function Header() {
 
         const el = document.elementFromPoint(e.clientX, e.clientY)
         const pos = el.getBoundingClientRect().left
-
+        
         const slider = document.getElementById('slider')
         const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
-
+        if (pos - pos_box < 0) return
         slider.style.transform = `translateX(${pos - pos_box}px)`
     }
     
@@ -39,7 +39,7 @@ function Header() {
 
         const top = document.getElementById(e.target.getAttribute('to')).getBoundingClientRect().top
         const scroll = document.getElementById('main_container').scrollTop
-        document.getElementById('main_container').scrollTop = top - 130 + scroll
+        document.getElementById('main_container').scrollTop = top - 150 + scroll
         setTimeout(() => window.isScrolling = false, 550)
     }
 

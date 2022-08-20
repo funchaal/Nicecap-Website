@@ -2,9 +2,9 @@ import './App.css';
 import Header from './components/Header.js'
 import iconbeauty from './images/iconbeauty.svg'
 import app_qrcode from './images/frame (3).png'
-import googleplay_ic from './images/googleplay_ic.svg'
-import appstore_ic from './images/appstore_ic.svg'
-import playstoreqrcode from './images/playstoreqrcode.svg'
+import android_button from './images/Download android.svg'
+import appstore_button from './images/Download_on_the_App_Store_Badge_PTBR_RGB_wht_100317.svg'
+import androidqrcode from './images/androidqrcode.svg'
 import appstoreqrcode from './images/appstoreqrcode.svg'
 import logo from './images/iconbeauty 2.svg'
 import eu from './images/eu 2.jpg'
@@ -25,6 +25,16 @@ function App() {
   window.ok = true
 
   function myfunc() {
+
+    const header = document.getElementById('header')
+    const main_container = document.getElementById('main_container')
+
+    if (main_container.scrollTop > 10) {
+      header.style.transform = 'translateY(-35px)'
+    } else {
+      header.style.transform = 'translateY(0)'
+    }
+
     if (window.isScrolling) return
 
     const el = Array.from(document.querySelectorAll('h2')).filter((val) => val.getBoundingClientRect().top > -150 && val.getBoundingClientRect().top < 400)
@@ -52,8 +62,8 @@ function App() {
       <Header/>
       <div id='main_container' onScroll={myfunc} blocked='no'>
         <div className='side left'>
-          <h2 id='download' style={{ margin: '0 auto', fontSize: '2.5em', fontWeight: 'bold' }}>NICECAP</h2>
-          <div className='text-divisor' style={{ margin: '0 auto', marginBottom: '40px' }}></div>
+          <h2 id='download' style={{ fontSize: '2.5em', fontWeight: 500 }}>NICECAP</h2>
+          <div className='text-divisor'></div>
           <div className='default'>
             <p>
           A proposta se baseia em um sistema com sensor de aproximação acoplado a um boné que alerta o usuário com um sinal sonoro ao aproximar de um obstáculo. O sistema ainda conta com um app próprio para personalização do usuário. Uma vez que cerca de 22% da população santista tem algum tipo de deficiência, sendo que 54% desses são deficientes visuais, este projeto será útil para promover maior segurança aos deficientes ao se locomoverem no meio urbano.
@@ -61,15 +71,15 @@ function App() {
                 <label className='download-label'>Download app</label>
             <div className='download'>
               <div>
-                <button type='button'><img src={googleplay_ic}></img>Android apk</button>
-                <label>Play Store QR Code</label>
+                <img src={android_button} className='button'></img>
+                <label>Android QR Code</label>
                 <div>
-                  <img src={playstoreqrcode}></img>
+                  <img src={androidqrcode}></img>
                 </div>
               </div>
               <div className='white-divisor download'></div>
               <div>
-                <button type='button' className='ios'><img src={appstore_ic}></img>Ios obb</button>
+                <img src={appstore_button} className='button' style={{ pointerEvents: 'none' }}></img>
                 <label>App Store QR Code</label>
                 <div>
                   <img src={appstoreqrcode}></img>
