@@ -48,6 +48,7 @@ function App() {
 
   return (
     <main>
+      
       <Header/>
       <div id='main_container' onScroll={myfunc} blocked='no'>
         <div className='side left'>
@@ -57,7 +58,7 @@ function App() {
             <p>
           A proposta se baseia em um sistema com sensor de aproximação acoplado a um boné que alerta o usuário com um sinal sonoro ao aproximar de um obstáculo. O sistema ainda conta com um app próprio para personalização do usuário. Uma vez que cerca de 22% da população santista tem algum tipo de deficiência, sendo que 54% desses são deficientes visuais, este projeto será útil para promover maior segurança aos deficientes ao se locomoverem no meio urbano.
           </p>
-                <label style={{ marginTop: '50px', marginBottom: '20px', fontWeight: 600 }}>Download app</label>
+                <label className='download-label'>Download app</label>
             <div className='download'>
               <div>
                 <button type='button'><img src={googleplay_ic}></img>Android apk</button>

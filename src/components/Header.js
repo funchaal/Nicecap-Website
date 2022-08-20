@@ -51,7 +51,7 @@ function Header() {
             <div class='box' onMouseMove={mouseMove} onMouseLeave={mouseOut}>
                 <div id='slider'></div>
                 <div id='pin'></div>
-                <button type='button' className='on' onClick={click}><a to='download'>Download</a></button>
+                <button type='button' onClick={click}><a className='on' to='download'>Download</a></button>
                 <button type='button' onClick={click}><a to='about'>Sobre</a></button>
                 <button type='button' onClick={click}><a to='autors'>Autores</a></button>
             </div>
