@@ -106,7 +106,7 @@ main {
   width: 96px;
   height: 30px;
   pointer-events: none;
-  background-color: rgb(0, 68, 255);
+  background-color: rgb(0, 59, 253);
   border-radius: 10px;
   transition-duration: 300ms;
 }
@@ -197,12 +197,11 @@ h2 {
 }
 
 .download-label {
-  background: var(--main-gradient-br);
+  /* background: var(--main-gradient-br);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  background-clip: text;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  background-clip: text; */
+  /* margin-top: 60px; */
   font-weight: 500;
 }
 
@@ -282,6 +281,16 @@ h2 {
 
 .white-divisor.download {
   display: none;
+}
+
+.download-divisor {
+  content: '';
+  height: 3px;
+  width: 40px;
+  border-radius: 10px;
+  margin-top: 2px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.823);
 }
 
 @keyframes divisor-image {
@@ -389,7 +398,7 @@ h2 {
 }
 
 #logo {
-  height: 35%;
+  height: 32%;
 }
 
 .logo-box {
@@ -403,13 +412,13 @@ h2 {
     opacity: 0;
   }
   .text-divisor {
-    background-color: #0055ff;
+    background-color: #0062ff;
   }
 
   #header #pin {
     height: 4px;
     bottom: 0;
-    background-color: #0055ff;
+    background-color: #0062ff;
   }
 
   #header button {
