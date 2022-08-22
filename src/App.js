@@ -18,7 +18,6 @@ import aline from './images/aline.jpeg'
 import rf from './images/rf.svg'
 import proto from './images/proto.jpg'
 import model from './images/model.png'
-import app_icon from './images/app-icon.svg'
 
 function App() {
   document.title = 'Nicecap'
@@ -79,7 +78,6 @@ function App() {
             <p>
           A proposta se baseia em um sistema com sensor de aproximação acoplado a um boné que alerta o usuário com um sinal sonoro ao aproximar de um obstáculo. O sistema ainda conta com um app próprio para personalização do usuário. Uma vez que cerca de 22% da população santista tem algum tipo de deficiência, sendo que 54% desses são deficientes visuais, este projeto será útil para promover maior segurança aos deficientes ao se locomoverem no meio urbano.
           </p>
-          <img src={app_icon} style={{ border: 'none', marginTop: '60px', marginBottom: '40px', width: '60px', minWidth: '60px', maxWidth: '60px' }}></img>
                 <label className='download-label'>Download app
                 <div className='download-divisor'></div>
                 </label>
