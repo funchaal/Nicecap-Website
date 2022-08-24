@@ -51,9 +51,10 @@ function Header() {
             <div class='box' onMouseMove={mouseMove} onMouseLeave={mouseOut}>
                 <div id='slider'></div>
                 <div id='pin'></div>
-                <button type='button' onClick={click}><a className='on' to='download'>Download</a></button>
-                <button type='button' onClick={click}><a to='about'>Sobre</a></button>
-                <button type='button' onClick={click}><a to='autors'>Autores</a></button>
+                <button type='button' onClick={click}><a className='on' to='download'><span>Download</span></a></button>
+                <button type='button' onClick={click}><a to='about'><span>Sobre</span></a></button>
+                <button type='button' onClick={click}><a to='contact'><span>Contato</span></a></button>
+                <button type='button' onClick={click}><a to='autors'><span>Autores</span></a></button>
             </div>
         </div>
     )

@@ -53,8 +53,10 @@ html, body, #root {
 }
 
 .side.left {
+  position: relative;
   max-width: calc(100% - 40px);
   padding-top: 150px;
+  height: max-content;
 }
 
 iframe {
@@ -85,7 +87,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 25px;
   background-color: rgb(42, 42, 42);
   transition-duration: 400ms;
 }
@@ -95,20 +97,24 @@ main {
   width: 96px;
   height: 30px;
   pointer-events: none;
-  background-color: rgba(211, 211, 211, 0.275);
+  display: none;
+  background-color: rgba(211, 211, 211, 0.167);
   border-radius: 10px;
-  margin-right: 4px;
-  transition-duration: 300ms;
+  margin-right: 6px;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+  transition-duration: 500ms;
 }
 
 #header #pin {
   position: absolute;
-  width: 96px;
-  height: 30px;
+  width: 104px;
+  height: 32px;
   pointer-events: none;
   background-color: rgb(0, 59, 253);
-  border-radius: 10px;
-  transition-duration: 300ms;
+  border-radius: 20px;
+  /* display: none; */
+  transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+  transition-duration: 500ms;
 }
 
 #header button {
@@ -117,24 +123,57 @@ main {
   border-radius: 10px;
   color: white;
   font-size: 0.9em;
-  width: 100px;
-  height: 30px;
+  width: 115px;
+  height: 32px;
   overflow: hidden;
   background-color: transparent;
 }
 
+#header button a span::after {
+  content: '';
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  border-radius: 10px;
+  width: 0;
+  position: absolute;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: white;
+}
+
+#header button a.on span::after {
+  width: 0;
+  opacity: 0;
+}
+
+#header button a:hover span::after {
+  width: 40px;
+}
+
+#header button a:hover {
+  opacity: 100%;
+}
+
 #header button a {
   cursor: pointer;
-  font-weight: 400;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-right: 4px;
+  padding-right: 10px;
   width: 100%;
   height: 100%;
-  color: white;
   opacity: 80%;
   transition-duration: 200ms;
+}
+
+#header button a span {
+  color: white;
+  display: block;
+  pointer-events: none;
+  position: relative;
+  font-size: 1.05em;
+  font-weight: 400;
 }
 
 #header button a.on {
@@ -149,7 +188,8 @@ main {
 
 #main_container {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-left: 10vw;
   flex-direction: row;
   width: 100%;
   height: 100%;
@@ -169,7 +209,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 48vw;
+  max-width: 50vw;
   min-width: 700px;
   font-size: 1.5em;
   line-height: normal;
@@ -182,23 +222,21 @@ h2 {
   line-height: normal;
 }
 
-.default > p strong {
-  /* font-weight: 500; */
-  color: cyan;
-}
-
 .default > img {
   width: 40vw;
   border-radius: 20px;
   min-width: 500px;
   margin: 30px;
-  margin-left: 20px;
+  /* margin-right: 80px; */
   border: 2px solid rgba(0, 157, 255, 0.83);
 }
 
 .default > span {
   font-size: 1.17em;
-  margin: 20px 0;
+  margin-top: 40px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  display: block;
 }
 
 .download-label {
@@ -392,6 +430,13 @@ h2 {
   margin-top: 60px;
 }
 
+@media (max-width: 1100px) {
+  #main_container {
+    justify-content: center;
+    padding-left: 0;
+  }
+}
+
 @media (max-width: 499px) {
   #header {
     background-color: #383838;
@@ -412,9 +457,15 @@ h2 {
   height: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   #header #slider {
     opacity: 0;
+  }
+  #header {
+    padding: 0;
+  }
+  #header button a span::after {
+    display: none;
   }
   .text-divisor {
     background-color: #0062ff;

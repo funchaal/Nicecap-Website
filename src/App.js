@@ -28,7 +28,7 @@ function App() {
     const header = document.getElementById('header')
     const main_container = document.getElementById('main_container')
 
-    if (window.innerWidth < 600 && main_container.scrollTop > 10) {
+    if (window.innerWidth < 700 && main_container.scrollTop > 10) {
       header.style.transform = 'translateY(-35px)'
     } else {
       header.style.transform = 'translateY(0)'
@@ -39,7 +39,7 @@ function App() {
     const header = document.getElementById('header')
     const main_container = document.getElementById('main_container')
 
-    if (window.innerWidth < 600 && main_container.scrollTop > 10) {
+    if (window.innerWidth < 700 && main_container.scrollTop > 10) {
       header.style.transform = 'translateY(-35px)'
     } else {
       header.style.transform = 'translateY(0)'
@@ -126,11 +126,17 @@ function App() {
               <p>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida.</p>
               </div>
             <div className='divisor'></div>
+            <h2 id='contact' name='contact'>Contato</h2>
+            <div className='text-divisor'></div>
+            <div className='default'>
+              <p>Para entrar em contato, é só enviar um email para: <strong>nicecap@outlook.com</strong></p>
+            </div>
+            <div className='divisor'></div>
             <h2 id='autors' name='autors'>Autores</h2>
           <div className='text-divisor'></div>
             <div className='default'>
             <p>Esse projeto foi idealizado e construído por três principais autores, Marco Antonio Vieira Lopes Rubens, Rafael Funchal e Vitor Henrique Funchal Nascimento.</p>
-            <div id='autors' name='autors' className='instagram-ctn'>
+            <div className='instagram-ctn'>
               <div className='instagram-box'>
                 <img src={marco}></img>
                 <span className='name'>Marco Vieira</span>
