@@ -53,8 +53,8 @@ function Header() {
                 <div id='pin'></div>
                 <button type='button' onClick={click}><a className='on' to='download'><span>Download</span></a></button>
                 <button type='button' onClick={click}><a to='about'><span>Sobre</span></a></button>
-                <button type='button' onClick={click}><a to='contact'><span>Contato</span></a></button>
                 <button type='button' onClick={click}><a to='autors'><span>Autores</span></a></button>
+                <button type='button' onClick={click}><a to='contact'><span>Contato</span></a></button>
             </div>
         </div>
     )

@@ -18,6 +18,9 @@ import aline from './images/aline.jpeg'
 import rf from './images/rf.svg'
 import proto from './images/proto.jpg'
 import model from './images/model.png'
+import { CodeBlock, dracula } from "react-code-blocks";
+import { useState } from 'react'
+import loading_ic from './images/loading-ic.svg'
 
 function App() {
   document.title = 'Nicecap'
@@ -66,9 +69,55 @@ function App() {
     if (window.ok) slider.style.transform = `translateX(${item_pos - pos_box}px)`
   }
 
+  const [submitable, setSubmitable] = useState(true)
+
+    async function formSubmit(e) {
+        e.preventDefault()
+        
+        if (submitable) {
+            setSubmitable(false)
+
+            const name = document.getElementById('contact_name').value.trim()
+            const email = document.getElementById('contact_email').value.trim()
+            const message = document.getElementById('contact_message').value.trim()
+
+            const button = document.querySelector('#contact_form button[type="submit"]')
+            
+            button.style.pointerEvents = 'none'
+            button.classList.add('off')
+            
+            const data = await fetch('https://formspree.io/f/mbjblzdw', {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }, 
+                method: "POST", 
+                body: JSON.stringify({
+                    name: name, 
+                    email: email, 
+                    message: message
+                })
+            })
+            
+            button.style.pointerEvents = 'all'
+            button.classList.remove('off')
+            
+            const res = await data.json()
+            
+            setSubmitable(true)
+            
+            if (res.ok) {
+                document.querySelectorAll('#contact_form .input').forEach((el) => { el.value = ''; el.blur() })
+            } else if (res.errors && res.errors[0].code === 'TYPE_EMAIL') {
+                document.getElementById('contact_email').focus()
+            } else {
+                //sendMessage('Houve um erro do servidor :/', 'red')
+            }
+        }
+    }
+
   return (
     <main>
-      
       <Header/>
       <div id='main_container' onScroll={myfunc} blocked='no'>
         <div className='side left'>
@@ -130,6 +179,16 @@ function App() {
             <div className='text-divisor'></div>
             <div className='default'>
               <p>Para entrar em contato, é só enviar um email para: <strong>nicecap@outlook.com</strong></p>
+              <p>Ou se preferir, pode mandar uma menssagem direto daqui: </p>
+              <form id='contact_form' onSubmit={formSubmit}>
+                <label>Nome: </label>
+                <input type='text' id='contact_name' name='name' placeholder='Insira o seu nome' required={true}></input>
+                <label>Email: </label>
+                <input type='text' id='contact_email' name='email' placeholder='mateus_surfista@gmail.com' required={true}></input>
+                <label>Menssagem: </label>
+                <textarea id='contact_message' name='message' placeholder='Muito bom esse projeto!!' required={true}></textarea>
+                <button type='submit'><img src={loading_ic} className='loading'></img><span>Enviar</span></button>
+              </form>
             </div>
             <div className='divisor'></div>
             <h2 id='autors' name='autors'>Autores</h2>
