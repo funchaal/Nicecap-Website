@@ -178,7 +178,8 @@ function App() {
             <h2 id='contact' name='contact'>Contato</h2>
             <div className='text-divisor'></div>
             <div className='default'>
-              <p>Para entrar em contato, é só enviar um email para: <strong>nicecap@outlook.com</strong></p>
+              <p>Para entrar em contato, é só enviar um email para: </p>
+              <span id='nicecap_email'>nicecap@outlook.com</span>
               <p>Ou se preferir, pode mandar uma menssagem direto daqui: </p>
               <form id='contact_form' onSubmit={formSubmit}>
                 <label>Nome: </label>
