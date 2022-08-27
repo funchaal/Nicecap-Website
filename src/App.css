@@ -158,7 +158,7 @@ main {
   margin: 0;
   margin-bottom: 20px;
   align-self: flex-start;
-  color: rgb(0, 200, 255);
+  color: rgb(0, 162, 255);
 }
 
 #contact_form button[type='submit'] {
@@ -198,7 +198,7 @@ main {
 
 #contact_form button[type='submit'] img {
   opacity: 0;
-  height: 60%;
+  height: 50%;
   position: absolute;
   transition-duration: 200ms;
 }
@@ -298,7 +298,6 @@ main {
 
 #main_container {
   display: flex;
-  /* justify-content: center; */
   padding-left: 10vw;
   flex-direction: row;
   width: 100%;
@@ -338,7 +337,7 @@ h2 {
   min-width: 500px;
   margin: 30px;
   /* margin-right: 80px; */
-  border: 2px solid rgba(0, 157, 255, 0.83);
+  border: 2px solid rgb(0, 140, 255);
 }
 
 .default > span {
@@ -554,6 +553,9 @@ h2 {
 }
 
 @media (max-width: 500px) {
+  #contact_form button[type='submit']:hover {
+    filter: none;
+  }
   #header button {
     width: 25vw;
   }
