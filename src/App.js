@@ -231,7 +231,7 @@ function App() {
                 <span className='name'>Vitor Funchal</span>
                 <div className='instagram-divisor'></div>
                 <div className='social'>
-                  <a target='_blank' href='https://www.instagram.com/funchal_006/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>funchal_006</a>
+                  <a target='_blank' href='https://www.instagram.com/funchal_009/' style={{ marginBottom: '5px' }}><img src={instagram_ic}></img>funchal_009</a>
                   <a target='_blank' href='https://www.linkedin.com/in/vitor-funchal-286111206'><img src={linkedin_ic}></img>linkedin</a>
                 </div>
               </div>
