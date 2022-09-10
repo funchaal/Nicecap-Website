@@ -163,21 +163,20 @@ main {
 }
 
 #contact_form button[type='submit'] {
-  width: 90%;
-  margin: 0 auto;
-  height: 42px;
+  width: 160px;
+  height: 38px;
   align-self: flex-end;
   display: flex;
   flex-direction: row;
   justify-content: center;
   position: relative;
   align-items: center;
-  border-radius: 15px;
-  margin-top: 40px;
+  border-radius: 12px;
+  margin-top: 35px;
   cursor: pointer;
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
   background-color: rgb(0, 89, 255);
-  background-image: linear-gradient(to right bottom, rgb(0, 115, 255), rgb(0, 96, 198));
+  background-image: linear-gradient(to right bottom, rgb(0, 174, 255), rgb(0, 115, 198));
   transition-duration: 200ms;
 }
 
