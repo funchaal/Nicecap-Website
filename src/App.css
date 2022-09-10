@@ -66,7 +66,7 @@ iframe {
   height: calc((40vw*8.85/16));
   min-width: 500px;
   min-height: 281.25px;
-  margin: 50px 30px;
+  margin: 30px;
   margin-left: 20px;
   /* border: 2px solid rgba(0, 157, 255, 0.83); */
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
@@ -146,9 +146,9 @@ main {
 
 #contact_form label {
   margin-top: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   color: white;
-  font-size: 0.8em;
+  font-size: 0.65em;
   font-weight: 400;
   align-self: flex-start;
 }
@@ -163,16 +163,17 @@ main {
 }
 
 #contact_form button[type='submit'] {
-  width: 140px;
-  height: 38px;
+  width: 90%;
+  margin: 0 auto;
+  height: 42px;
   align-self: flex-end;
   display: flex;
   flex-direction: row;
   justify-content: center;
   position: relative;
   align-items: center;
-  border-radius: 10px;
-  margin-top: 30px;
+  border-radius: 15px;
+  margin-top: 40px;
   cursor: pointer;
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
   background-color: rgb(0, 89, 255);
@@ -332,6 +333,7 @@ h2 {
 .default > p {
   width: 100%;
   font-size: 0.9em;
+  margin-bottom: 15px;
   line-height: normal;
   color: rgb(225, 225, 225);
 }
@@ -348,7 +350,7 @@ h2 {
 
 .default > span {
   font-size: 1.17em;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   font-weight: 400;
   margin-bottom: 10px;
   display: block;
@@ -359,7 +361,7 @@ h2 {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text; */
-  margin-top: 60px;
+  margin-top: 50px;
   font-weight: 500;
 }
 
@@ -675,7 +677,7 @@ h2 {
   }
 
   .default > img {
-    max-width: calc(100% - 40px);
+    max-width: calc(100% - 10px);
     min-width: unset;
     min-height: unset;
     margin-left: 0;

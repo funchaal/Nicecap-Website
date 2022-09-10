@@ -155,7 +155,7 @@ function App() {
               <p>O Nicecap é um dispositivo que tem como objetivo proporcionar maior segurança e acessibiidade na locomoção de deficientes visuais no ambiente urbano. A ideia veio com base no video a seguir enquanto discutiamos qual seria o projeto que desenvolveriamos para a feira de ciências.</p></div>
             <div className='default'>
               <iframe
-                src={`https://www.youtube.com/embed/ZpZaRejnOxE`}
+                src={`https://www.youtube.com/embed/ZpZaRejnOxE?autoplay=1&mute=1&loop=1`}
                 frameBorder="0"
                 allow="autoplay"
                 allowFullScreen
@@ -181,7 +181,7 @@ function App() {
             <h2 id='contact' name='contact'>Contato</h2>
             {/* <div className='text-divisor'></div> */}
             <div className='default'>
-              <p>Para entrar em contato, é só enviar um email para: </p>
+              <p style={{ marginBottom: 0 }}>Para entrar em contato, é só enviar um email para: </p>
               <span id='nicecap_email'>nicecap@outlook.com</span>
               <p>Ou se preferir, pode mandar uma mensagem direto daqui: </p>
               <form id='contact_form' onSubmit={formSubmit}>
