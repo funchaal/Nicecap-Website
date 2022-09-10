@@ -18,13 +18,9 @@ import aline from './images/aline.jpeg'
 import rf from './images/rf.svg'
 import proto from './images/proto.jpg'
 import model from './images/model.png'
-import { CodeBlock, dracula } from "react-code-blocks";
 import { useState } from 'react'
 import loading_ic from './images/loading-ic.svg'
-import image1 from './images/image 1.jpeg'
-import image2 from './images/image 2.jpeg'
-import image3 from './images/image 3.jpeg'
-import image4 from './images/image 4.jpeg'
+import collage from './images/collage.JPG'
 
 function App() {
   document.title = 'Nicecap'
@@ -125,8 +121,8 @@ function App() {
       <Header/>
       <div id='main_container' onScroll={myfunc} blocked='no'>
         <div className='side left'>
-          <h2 id='download' style={{ fontSize: '2.5em', fontWeight: 500 }}>NICECAP</h2>
-          <div className='text-divisor'></div>
+          <h2 id='download' style={{  }}>Nicecap</h2>
+          {/* <div className='text-divisor'></div> */}
           <div className='default'>
             <p>
           A proposta se baseia em um sistema com sensor de aproximação acoplado a um boné que alerta o usuário com um sinal sonoro ao aproximar de um obstáculo. O sistema ainda conta com um app próprio para personalização do usuário. Uma vez que cerca de <strong>22%</strong> da população santista tem algum tipo de deficiência, sendo que <strong>54%</strong> desses são deficientes visuais, este projeto será útil para promover maior segurança aos deficientes ao se locomoverem no meio urbano.
@@ -154,9 +150,9 @@ function App() {
           </div>
           <div className='divisor'></div>
               <h2 id='about'>Sobre</h2>
-          <div className='text-divisor'></div>
+          {/* <div className='text-divisor'></div> */}
               <div className='default'>
-              <p>O Nicecap é um dispositivo que tem como objetivo proporcionar maior segurança e acessibiidade na locomoção de defisientes visuais no ambiente urbano. A ideia veio com base no video a seguir enquanto discutiamos qual seria o projeto que desenvolveriamos para a feira de ciências.</p></div>
+              <p>O Nicecap é um dispositivo que tem como objetivo proporcionar maior segurança e acessibiidade na locomoção de deficientes visuais no ambiente urbano. A ideia veio com base no video a seguir enquanto discutiamos qual seria o projeto que desenvolveriamos para a feira de ciências.</p></div>
             <div className='default'>
               <iframe
                 src={`https://www.youtube.com/embed/ZpZaRejnOxE`}
@@ -169,10 +165,7 @@ function App() {
             <div className='default'>
             <p>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida. Dessa forma, o Nicecap é útil para evitar esse tipo de incidente.</p>
             <p>O problema com obstáculos para a lomoção urbana é bem expressivo. Como se pode ver nas imagens, a quantidade de caminhões parados na rua em um raio de 2 quadras do bairro é bem grande, além de lixeiras altas que são também bem comuns.</p>
-            <img src={image1}></img>
-            <img src={image2}></img>
-            <img src={image3}></img>
-            <img src={image4}></img>
+            <img src={collage}></img>
             </div>
             <div className='default'>
             <span>Como foi feito
@@ -186,24 +179,24 @@ function App() {
               </div>
             <div className='divisor'></div>
             <h2 id='contact' name='contact'>Contato</h2>
-            <div className='text-divisor'></div>
+            {/* <div className='text-divisor'></div> */}
             <div className='default'>
               <p>Para entrar em contato, é só enviar um email para: </p>
               <span id='nicecap_email'>nicecap@outlook.com</span>
-              <p>Ou se preferir, pode mandar uma menssagem direto daqui: </p>
+              <p>Ou se preferir, pode mandar uma mensagem direto daqui: </p>
               <form id='contact_form' onSubmit={formSubmit}>
                 <label>Nome: </label>
                 <input type='text' id='contact_name' name='name' placeholder='Insira o seu nome' required={true}></input>
                 <label>Email: </label>
                 <input type='text' id='contact_email' name='email' placeholder='mateus_surfista@gmail.com' required={true}></input>
-                <label>Menssagem: </label>
+                <label>Mensagem: </label>
                 <textarea id='contact_message' name='message' placeholder='Muito bom esse projeto!!' required={true}></textarea>
                 <button type='submit'><img src={loading_ic} className='loading'></img><span>Enviar</span></button>
               </form>
             </div>
             <div className='divisor'></div>
             <h2 id='autors' name='autors'>Autores</h2>
-          <div className='text-divisor'></div>
+          {/* <div className='text-divisor'></div> */}
             <div className='default'>
             <p>Esse projeto foi idealizado e construído por três principais autores, Marco Antonio Vieira Lopes Rubens, Rafael Funchal e Vitor Henrique Funchal Nascimento.</p>
             <div className='instagram-ctn'>
