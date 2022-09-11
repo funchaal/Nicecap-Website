@@ -54,9 +54,9 @@ function App() {
   })
   
   function alternateOps() {
-    if (window.scrs_allow === false) return
-
     controlHeader()
+
+    if (window.scrs_allow === false) return
 
     const el = Array.from(document.querySelectorAll('h2')).filter((val) => {
       const top = val.getBoundingClientRect().top

@@ -66,7 +66,8 @@ iframe {
   height: calc((40vw*8.85/16));
   min-width: 500px;
   min-height: 281.25px;
-  margin: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   margin-left: 20px;
   /* border: 2px solid rgba(0, 157, 255, 0.83); */
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
@@ -224,10 +225,11 @@ main {
   width: 100%;
   height: 50px;
   border-radius: 10px;
-  background-color: rgb(75, 75, 75);
+  background-color: rgb(67, 67, 67);
   padding: 0 15px;
-  font-size: 0.8em;
+  font-size: 0.7em;
   color: white;
+  font-weight: 400;
   border: 2px solid transparent;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   transition-duration: 200ms;
@@ -240,7 +242,7 @@ main {
 #contact_form input::placeholder, #contact_form textarea::placeholder {
   font-weight: 400;
   font-size: 0.9em;
-  color: rgb(181, 181, 181);
+  color: rgb(194, 194, 194);
 }
 
 #contact_form textarea {
@@ -348,26 +350,20 @@ h2 {
 .default > img {
   max-width: 80%;
   border-radius: 20px;
-  /* min-width: 500px; */
   max-height: 500px;
   margin: 50px;
-  /* margin-right: 80px; */
-  /* border: 2px solid rgb(0, 140, 255); */
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 
 .default > span {
   font-size: 1.17em;
-  /* margin-top: 40px; */
   font-weight: 400;
   margin-bottom: 10px;
   display: block;
 }
 
 .download-label {
-  /* background: var(--main-gradient-br);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text; */
   margin-top: 50px;
   font-weight: 500;
 }
@@ -594,6 +590,20 @@ h2 {
 }
 
 @media (max-width: 499px) {
+  iframe {
+    width: calc(100vw - 40px);
+    height: calc((100vw - 40px) * 9/16);
+    min-width: unset;
+    min-height: unset;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .default > img {
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
   #header {
     background-color: #383838;
   }
@@ -672,15 +682,6 @@ h2 {
 
   .white-divisor.download {
     display: block;
-  }
-
-  iframe {
-    width: calc(100vw - 40px);
-    height: calc((100vw - 40px) * 9/16);
-    min-width: unset;
-    min-height: unset;
-    margin-left: 0;
-    margin-right: 0;
   }
 
   .default > img {
