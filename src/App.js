@@ -18,16 +18,17 @@ import aline from './images/aline.jpeg'
 import rf from './images/rf.svg'
 import proto from './images/proto.jpg'
 import model from './images/model.png'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import loading_ic from './images/loading-ic.svg'
 import collage from './images/collage.JPG'
 
 function App() {
   document.title = 'Nicecap'
 
-  window.ok = true
+  window.scrs_allow = true
+  window.scrs_cont = true
 
-  window.onresize = () => {
+  function controlHeader() {
     const header = document.getElementById('header')
     const main_container = document.getElementById('main_container')
 
@@ -38,35 +39,43 @@ function App() {
     }
   }
 
-  function myfunc() {
-    const header = document.getElementById('header')
+  window.onresize = () => {
+    controlHeader()
+  }
+
+  useEffect(() => {
     const main_container = document.getElementById('main_container')
+    main_container.addEventListener('wheel', () => {
+      window.scrs_cont = false
+    })
+    main_container.addEventListener('touchmove', () => {
+      window.scrs_cont = false
+    })
+  })
+  
+  function alternateOps() {
+    if (window.scrs_allow === false) return
 
-    if (window.innerWidth < 700 && main_container.scrollTop > 10) {
-      header.style.transform = 'translateY(-35px)'
-    } else {
-      header.style.transform = 'translateY(0)'
-    }
+    controlHeader()
 
-    if (window.isScrolling) return
-
-    const el = Array.from(document.querySelectorAll('h2')).filter((val) => val.getBoundingClientRect().top > -150 && val.getBoundingClientRect().top < 400)
+    const el = Array.from(document.querySelectorAll('h2')).filter((val) => {
+      const top = val.getBoundingClientRect().top
+      return top > -150 && top < 400
+    })
 
     if (!el[0]) return
     
-    const item = document.querySelector(`#header a[to='${el[0].id}']`)
+    const op = document.querySelector(`#header a[to='${el[0].id}']`)
 
-    document.querySelectorAll('#header .box a').forEach((el) => el.classList.remove('on'))
-    item.classList.add('on')
+    document.querySelectorAll('#header .op-box a').forEach((el) => el.classList.remove('on'))
+    op.classList.add('on')
 
-    const item_pos = item.getBoundingClientRect().left
+    const op_pos = op.getBoundingClientRect().left
 
-    const pos_box = document.querySelector('#header .box').getBoundingClientRect().left
+    const bx_pos = document.querySelector('#header .op-box').getBoundingClientRect().left
     const pin = document.getElementById('pin')
-    const slider = document.getElementById('slider')
 
-    pin.style.transform = `translateX(${item_pos - pos_box}px)`
-    if (window.ok) slider.style.transform = `translateX(${item_pos - pos_box}px)`
+    pin.style.transform = `translateX(${op_pos - bx_pos}px)`
   }
 
   const [submitable, setSubmitable] = useState(true)
@@ -119,7 +128,7 @@ function App() {
   return (
     <main>
       <Header/>
-      <div id='main_container' onScroll={myfunc} blocked='no'>
+      <div id='main_container' onScroll={alternateOps}>
         <div className='side left'>
           <h2 id='download' style={{  }}>Nicecap</h2>
           {/* <div className='text-divisor'></div> */}
