@@ -51,6 +51,7 @@ export default function Goto() {
           <span>Rolar para<img src={scrolle} alt=''></img></span>
           <ul>
             <li to='home' onClick={click} className='on'><span>Home</span><img src={arrow} alt=''></img></li>
+            <li to='values' onClick={click}><span>Valores</span><img src={arrow} alt=''></img></li>
             <li to='about' onClick={click}><span>Sobre</span><img src={arrow} alt=''></img></li>
             <li to='contact' onClick={click}><span>Contato</span><img src={arrow} alt=''></img></li>
             <li to='autors' onClick={click}><span>Autores</span><img src={arrow} alt=''></img></li>

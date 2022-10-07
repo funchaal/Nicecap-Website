@@ -43,11 +43,11 @@ function Header({ setDonate, setSuggestion }) {
                 <img src={logo} id='logo' alt=''></img>
             </div>
             <div className="social-box">
-                <img src={youtube} alt=''></img>
-                <img src={instagram} alt='' style={{ height: '20px' }}></img>
+                <a href='https://www.youtube.com/channel/UC47xmjVJuJn_wj5tLkmXQiw' target='_blank'><img src={youtube} alt=''></img><span>Youtube</span></a>
+                <a href='https://www.instagram.com/nicecap_ofc/' target='_blank'><img src={instagram} alt='' style={{ height: '20px' }}></img><span>Instagram</span></a>
                 <div style={{ width: '2px', height: '20px', backgroundColor: 'white', margin: '0 5px 0 30px' }}></div>
-                <img src={donate} onClick={() => setDonate(true)} alt=''></img>
-                <img src={suggestion} onClick={() => setSuggestion(true)} alt=''></img>
+                <a><img src={donate} onClick={() => setDonate(true)} alt=''></img></a>
+                <a><img src={suggestion} onClick={() => setSuggestion(true)} alt=''></img></a>
             </div>
             {/* <div class='op-box'>
                 <div id='slider'></div>

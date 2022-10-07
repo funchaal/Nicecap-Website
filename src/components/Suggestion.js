@@ -14,12 +14,12 @@ export default function Suggestion({ setSuggestion }) {
                 </div>
                 <div className='box'>
                     <form id='suggestion_form_box'>
-                        <label>Nome (opicional): </label>
-                        <input type='text' style={{ height: '45px', marginBottom: '15px', backgroundColor: 'rgb(84, 84, 84)' }} id='suggestion_name' name='name' placeholder='Insira o seu nome' required={true}></input>
-                        <label>Email (opicional): </label>
-                        <input type='text' style={{ height: '45px', marginBottom: '15px', backgroundColor: 'rgb(84, 84, 84)' }} id='suggestion_email' name='email' placeholder='007@gmail.com' required={true}></input>
-                        <label>Sugestão: </label>
-                        <textarea id='suggestion_message' name='message' style={{ backgroundColor: 'rgb(84, 84, 84)' }} placeholder='Muda alguma coisa' required={true}></textarea>
+                        <label style={{ marginBottom: '4px' }}>Nome (opicional): </label>
+                        <input type='text' style={{ height: '40px', marginBottom: '20px', backgroundColor: 'rgb(88, 88, 88)' }} id='suggestion_name' name='name' placeholder='Insira o seu nome' required={true}></input>
+                        <label style={{ marginBottom: '4px' }}>Email (opicional): </label>
+                        <input type='text' style={{ height: '40px', marginBottom: '20px', backgroundColor: 'rgb(88, 88, 88)' }} id='suggestion_email' name='email' placeholder='007@gmail.com' required={true}></input>
+                        <label style={{ marginBottom: '4px' }}>Sugestão: </label>
+                        <textarea id='suggestion_message' name='message' style={{ backgroundColor: 'rgb(88, 88, 88)' }} placeholder='Muda alguma coisa' required={true}></textarea>
                         <button type='submit' style={{ marginTop: '5px' }}><img src={loading_ic} className='loading' alt=''></img><span>Enviar</span></button>
                     </form>
                     <div className='divisor' style={{ margin: '30px auto 15px auto' }}></div>

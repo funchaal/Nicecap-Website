@@ -1,5 +1,5 @@
-import instagram_ic from '../images/icons/instagram.png'
-import linkedin_ic from '../images/icons/linkedin.png'
+import instagram_ic from '../images/icons/instagram_color.svg'
+import linkedin_ic from '../images/icons/linkedin_color.svg'
 import eu from '../images/autors/eu 2.jpg'
 import vito from '../images/autors/vito.jpeg'
 import marco from '../images/autors/marques.jpeg'
