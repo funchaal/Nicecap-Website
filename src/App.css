@@ -91,7 +91,6 @@ iframe {
   height: calc((40vw*8.85/16));
   min-width: 500px;
   min-height: 281.25px;
-  margin: 40px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
@@ -262,11 +261,39 @@ h2 {
   color: rgb(225, 225, 225);
 }
 
-.default > img {
+.default > figure {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+}
+
+.default > figure img {
   max-width: 80%;
   border-radius: 20px;
   max-height: 500px;
-  margin: 40px;
+}
+
+.default > figure figcaption {
+  margin-top: 24px;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  text-align: center;
+}
+
+.default > figure figcaption strong {
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.default > figure::after {
+  content: '';
+  width: 20%;
+  height: 1px;
+  background-color: white;
+  margin-top: 15px;
+  border-radius: 10px;
 }
 
 .default > span {
@@ -859,12 +886,15 @@ h3 div {
     display: block;
   }
 
-  .default > img {
+  .default > figure {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .default > figure img {
     max-width: calc(100% - 10px);
     min-width: unset;
     min-height: unset;
-    margin-left: 0;
-    margin-right: 0;
   }
 
   .download {

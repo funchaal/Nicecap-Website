@@ -16,7 +16,7 @@ export default function Home() {
             <div className='default'>
                 <div id='social_box_lateral'>
                     <a href='https://www.youtube.com/channel/UC47xmjVJuJn_wj5tLkmXQiw' target='_blank'><img src={youtube} alt=''></img></a>
-                    <a href='https://www.instagram.com/nicecap_ofc/' target='_blank'><img src={instagram} alt='' style={{ width: '45px', borderRadius: '15px' }}></img></a>
+                    <a href='https://www.instagram.com/nicecap_ofc/' target='_blank'><img src={instagram} alt='' style={{ width: '44px', borderRadius: '15px' }}></img></a>
                 </div>
                 <p>
             A proposta se baseia em um sistema com sensor de aproximação acoplado a um boné que alerta o usuário com um sinal sonoro ao aproximar de um obstáculo. O sistema ainda conta com um app próprio para personalização do usuário. Uma vez que cerca de <strong>22%</strong> da população santista tem algum tipo de deficiência, sendo que <strong>54%</strong> desses são deficientes visuais, este projeto será útil para promover maior segurança aos deficientes ao se locomoverem no meio urbano.
