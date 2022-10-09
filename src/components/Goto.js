@@ -53,6 +53,7 @@ export default function Goto() {
             <li to='home' onClick={click} className='on'><span>Home</span><img src={arrow} alt=''></img></li>
             <li to='values' onClick={click}><span>Valores</span><img src={arrow} alt=''></img></li>
             <li to='about' onClick={click}><span>Sobre</span><img src={arrow} alt=''></img></li>
+            <li to='development' onClick={click}><span>Desenvolvimento</span><img src={arrow} alt=''></img></li>
             <li to='contact' onClick={click}><span>Contato</span><img src={arrow} alt=''></img></li>
             <li to='autors' onClick={click}><span>Autores</span><img src={arrow} alt=''></img></li>
           </ul>

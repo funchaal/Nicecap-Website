@@ -41,7 +41,7 @@ export default function Contact() {
             setSubmitable(true)
             
             if (res.ok) {
-                document.querySelectorAll('#contact_form .input').forEach((el) => { el.value = ''; el.blur() })
+                document.querySelectorAll('#contact_form input, #contact_form textarea').forEach((el) => { el.value = ''; el.blur() })
             } else if (res.errors && res.errors[0].code === 'TYPE_EMAIL') {
                 document.getElementById('contact_email').focus()
             } else {
@@ -67,6 +67,7 @@ export default function Contact() {
                 <button type='submit'><img src={loading_ic} className='loading' alt=''></img><span>Enviar</span></button>
               </form>
             </div>
+            <div className='divisor'></div>
         </>
     )
 }

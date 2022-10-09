@@ -7,6 +7,7 @@ import Goto from './components/Goto.js'
 
 import Home from './components/Home.js'
 import About from './components/About.js'
+import Development from './components/Development.js'
 import Contact from './components/Contact.js'
 import Autors from './components/Autors.js'
 import Donate from './components/Donate.js'
@@ -100,11 +101,9 @@ function App() {
         </div>
         <div className='side left'>
           <Home />
-          <div className='divisor'></div>
           <About />
-          <div className='divisor'></div>
+          <Development />
           <Contact />
-          <div className='divisor'></div>
           <Autors />
           </div>
       </div>
