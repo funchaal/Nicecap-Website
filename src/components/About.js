@@ -9,7 +9,7 @@ export default function About() {
             <div className='default'>
               <figure>
                 <iframe
-                  src={`https://www.youtube.com/embed/ZpZaRejnOxE?autoplay=1&mute=1&loop=1`}
+                  src={`https://www.youtube.com/embed/ZpZaRejnOxE?&autoplay=1&mute=1&loop=1&rel=0&modestbranding=1`}
                   frameBorder="0"
                   allow="autoplay"
                   allowFullScreen
