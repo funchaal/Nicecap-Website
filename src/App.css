@@ -308,7 +308,7 @@ h2 {
   width: 190px;
   z-index: 1;
   border-radius: 15px;
-  background-color: rgb(70, 70, 70);
+  background-color: rgba(70, 70, 70, 1);
   margin: 30px;
   left: 0;
   margin-top: 120px;
@@ -326,7 +326,7 @@ h2 {
   right: -50px;
   cursor: pointer;
   background-color: rgba(70, 70, 70, 1);
-  padding: 10px 15px;
+  padding: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   transform: translateX(-240px);

@@ -17,7 +17,7 @@ export default function Donate({ setDonate }) {
                         <span className='t'>Chave Pix - CPF</span>
                         <span className='r d'>433.166.678-65</span>
                         <span className='t'>QR Code</span>
-                        <img className='r' src={pix} alt=''></img>
+                        <img className='r' src={pix} alt='' rel='preload'></img>
                     </div>
                     <div className='divisor' style={{ margin: '20px auto 15px auto' }}></div>
                     <p>60% do arrecadado para o projeto será doado para instituições de dificiêntes visuais, ou seja, se você doar 5 reais, 3 reais vão para essas instituições e 2 reais para cobrir o custo do projeto.</p>
