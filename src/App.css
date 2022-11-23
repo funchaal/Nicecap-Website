@@ -16,12 +16,76 @@
   text-decoration: none;
 }
 
+header * {
+  position: relative;
+}
+
+header.float {
+  position: fixed;
+  top: 0;
+  background-image: none;
+  height: 60px;
+  visibility: hidden;
+  padding-bottom: 0;
+}
+
+header.float * {
+  opacity: 0;
+  visibility: hidden;
+  transition-duration: 300ms;
+  transition-delay: 0;
+  pointer-events: none;
+}
+
+header.float.off * {
+  transition-duration: 0ms !important;
+  transition-delay: 0ms !important;
+}
+
+header.float.show * {
+  pointer-events: all;
+  opacity: 100%;
+  visibility: visible;
+  transition-delay: 400ms;
+}
+
+header.float.show {
+  visibility: visible;
+}
+
+
+header::before {
+  content: '';
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.948);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-60px);
+  transition-duration: 300ms;
+  transition-delay: 200ms;
+}
+
+header.show::before {
+  transform: none;
+  transition-delay: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(152, 152, 152);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
 #contact > box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: fit-content;
-  /* transform: translateX(-2vw); */
 }
 
 #contact {

@@ -8,7 +8,7 @@ import Home from './pages/Home.js'
 import Support from './pages/Support.js'
 import Header from './components/Header.js'
 
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter, 
@@ -25,6 +25,26 @@ function App() {
 
   document.title = 'Nicecap'
 
+  useEffect(() => {
+    window.addEventListener('scroll', scroller)
+  })
+
+  let CURRENT_SCROLL = 0
+
+  function scroller (e) {
+    const last_scroll = CURRENT_SCROLL
+    CURRENT_SCROLL = window.scrollY
+    const header = document.querySelector('header')
+    if (CURRENT_SCROLL < header.offsetHeight + 300) { header.classList.remove('show'); if (CURRENT_SCROLL < header.offsetHeight) { header.classList.remove('float') }; return }
+    if (!header.classList.contains('float')) {
+      header.classList.add('off')
+      setTimeout(() => header.classList.add('float'), 50)
+      setTimeout(() => header.classList.remove('off'), 100)
+    }
+    if (last_scroll > CURRENT_SCROLL) header.classList.add('show')
+    else header.classList.remove('show')
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -39,4 +59,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
