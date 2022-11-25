@@ -53,6 +53,47 @@ header.float.show {
   visibility: visible;
 }
 
+#message_box {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  width: 500px;
+  height: 55px;
+  margin: 0 calc(50% - (500px / 2));
+  border-radius: 20px;
+  animation: msg_box_out 200ms forwards;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+#message_box.show {
+  animation: msg_box_in 200ms forwards;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@keyframes msg_box_in {
+  from {
+    transform: translateY(-85px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes msg_box_out {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateY(-85px);
+  }
+}
+
 
 header::before {
   content: '';
@@ -89,17 +130,26 @@ body::-webkit-scrollbar-thumb {
 }
 
 #contact {
-  /* padding: 0; */
   padding: 0 8% 0 10%;
+  height: 45%;
 }
 
 #contact ~ section:last-of-type {
-  padding: 0 8% 0 10%;
+  /* padding: 0 8% 0 10%; */
+  padding: 0;
+  height: max-content;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  position: relative;
 }
 
-#contact ~ section:last-of-type box {
+#contact ~ section:last-of-type > box {
   display: flex;
   flex-direction: column;
+  margin-left: 2%;
+  height: 55vh;
+  min-height: 400px;
+  justify-content: center;
 }
 
 #contact ~ section:last-of-type box label {
@@ -112,15 +162,23 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 10px;
 }
 
-#contact > form {
-  width: 410px;
-  border-radius: 30px;
+#contact ~ section form {
+  width: 40%;
+  max-width: 550px;
+  /* border-radius: 30px; */
   z-index: 1;
-  background-color: rgba(200, 200, 200, 0.366);
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* background-color: rgba(210, 210, 210, 0.425); */
   backdrop-filter: blur(10px);
-  padding: 30px 20px;
-  margin-top: 140px;
-  align-self: flex-start;
+  padding: 30px 30px;
+  margin-top: 20px;
+  top: 0;
+  /* display: none; */
+  position: relative;
+  right: 0;
 }
 
 header {
@@ -134,7 +192,7 @@ header {
   height: 120px;
   padding: 0 30px;
   padding-bottom: 60px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.377), transparent);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.047), transparent);
 }
 
 header box a {
@@ -174,8 +232,9 @@ html section[land] {
 }
 
 #contact {
-  background-image: url(./images/coiso.png);
-  min-height: 380px;
+  background-image: url(./images/coiso.jpg);
+  min-height: 350px;
+  /* background-position: center; */
 }
 
 #home {
@@ -264,13 +323,6 @@ h3 {
   margin-bottom: 10px;
 }
 
-form {
-  width: 400px;
-  margin: 5%;
-  padding: 20px;
-  border-radius: 15px;
-}
-
 form input, form textarea {
   z-index: 1;
   width: 100%;
@@ -279,8 +331,17 @@ form input, form textarea {
   border-radius: 30px;
   font-size: 1rem;
   color: white;
-  background-color: rgba(218, 218, 218, 0.352);
+  background-color: rgb(87, 87, 87);
   resize: none;
+}
+
+form box:nth-child(2) {
+  width: calc(50% - 10px);
+  margin-right: 20px;
+}
+
+form box:nth-child(3) {
+  width: calc(50% - 10px);
 }
 
 form input::placeholder, form textarea::placeholder {
@@ -295,13 +356,85 @@ form box {
 }
 
 form button {
+  pointer-events: all;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 45px;
-  margin-top: 30px;
+  height: 50px;
+  margin: 25px 0;
   border-radius: 30px;
   background-color: rgb(0, 140, 255);
-  font-size: 1rem;
+}
+
+form button:hover {
+  cursor: pointer;
+}
+
+form button span {
+  font-size: 1.1rem;
   font-weight: 500;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+form button img {
+  position: absolute;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+form button img:not(.loading) {
+  right: 30px;
+  height: 30%;
+}
+
+form button:hover img:not(.loading):nth-child(2), form button.off img:not(.loading):nth-child(2) {
+  transform: rotate(180deg);
+  opacity: 0;
+}
+
+form button img:not(.loading):nth-child(3) {
+  transform: rotate(180deg);
+  opacity: 0;
+}
+
+form button:hover img:not(.loading):nth-child(3) {
+  transform: none;
+  opacity: 100%;
+}
+
+form button.off img:not(.loading):nth-child(3) {
+  transform: none;
+}
+
+form button img.loading {
+  height: 50%;
+  opacity: 0;
+  animation: loading 2000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+form button.off img.loading {
+  opacity: 100%;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+form button.off *:not(.loading) {
+  opacity: 0;
+}
+
+form button.off {
+  pointer-events: none;
 }
 
 form box label {
@@ -391,14 +524,17 @@ form box input:focus ~ label, form box textarea:focus ~ label {
 }
 
 @media (max-width: 1100px) {
-  html section {
+  h1 {
+    font-size: 4rem;
+  }
+  html section:not([land='yes']) {
     flex-direction: column !important;
     align-items: center !important;
     padding: 80px 0 0 0 !important;
   }
   html section > box > p {
     width: 800px;
-    max-width: calc(100vw - 100px);
+    max-width: calc(100vw - 60px);
   }
   html section > img[background] {
     width: 100% !important;
@@ -421,16 +557,36 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   #autor_ctn {
     margin: 6% 40px 6% 40px;
   }
-  #contact form {
-    margin-top: 1000px !important;
+  
+  #contact ~ section:last-of-type {
+    height: max-content !important;
+    flex-direction: column;
   }
-  #contact ~ section {
-    height: 1000px !important;
+  #contact ~ section:last-of-type > box {
+    height: fit-content;
+    min-height: unset;
+    /* margin: 20px 0; */
+  }
+  #contact ~ section form {
+    width: 550px;
+    max-width: 100%;
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 600px) {
   header box a:last-child {
     display: none;
+  }
+  form box:nth-child(2) {
+    width: 100%;
+    margin-right: 0;
+  }
+  form box:nth-child(3) {
+    width: 100%;
+  }
+  #contact {
+    height: 40%;
+    min-height: 200px;
   }
 }
