@@ -1,5 +1,6 @@
 import and from '../images/Download android.svg'
 import app from '../images/Download_on_the_App_Store_Badge_PTBR_RGB_wht_100317.svg'
+import { useNavigate } from "react-router-dom"
 
 import {
     createBrowserRouter, 
@@ -9,6 +10,7 @@ import {
   } from "react-router-dom";
 
 export default function Home_1() {
+    const navigate = useNavigate()
     return(
         <section id='home' land='yes'>
             <box>
@@ -18,7 +20,7 @@ export default function Home_1() {
                 <button onClick={() => {
                     document.getElementById('reason').scrollIntoView({ behavior: 'smooth' })
                 }}>Saiba mais</button>
-                <button style={{ marginLeft: '15px', backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>Contato</button>
+                <button style={{ marginLeft: '15px', backgroundColor: 'rgba(255, 255, 255, 0.3)' }} onClick={() => navigate('contact')}>Contato</button>
                 <div style={{ width: '60%', height: '3px', backgroundColor: 'white', borderRadius: '10px', marginTop: '20px' }}></div>
                     <span style={{ display: 'block', marginTop: '15px', fontSize: '1.1rem' }}>Baixar aplicativo</span>
                 <box>

@@ -10,6 +10,7 @@ import {
   import arrow from '../images/icons/small-arrow.svg'
   import correct from '../images/icons/correct.svg'
   import loading from '../images/icons/loading-ic.svg'
+  import x from '../images/icons/x.svg'
   import { useState } from "react"
   import sendMessage from '../modules/sendMessage.js'
 
@@ -44,22 +45,28 @@ export default function Contact() {
                 })
             })
             
-            button.style.pointerEvents = 'all'
-            button.classList.remove('off')
             
             const res = await data.json()
-            
-            setSubmitable(true)
+            button.classList.remove('off')
             
             if (res.ok) {
+                button.classList.add('ok')
                 sendMessage('Menssagem enviada!', 'rgba(0, 240, 0, 1)', 'white', 2000)
                 document.querySelectorAll('#contact_form input, #contact_form, textarea').forEach((el) => { el.value = ''; el.blur() })
             } else if (res.errors && res.errors[0].code === 'TYPE_EMAIL') {
+                button.classList.add('error')
                 sendMessage('Insira corretamente o e-mail', 'red', 'white', 3000)
                 document.querySelector('#contact_form input[name="email"]').focus()
             } else {
+                button.classList.add('error')
                 sendMessage('Houve um erro do servidor :/', 'red', 'white', 3000)
             }
+
+            setTimeout(() => {
+                button.classList.remove('ok', 'error')
+                button.style.pointerEvents = 'all'
+                setSubmitable(true)
+            }, 1000)
         }
     }
     return (
@@ -88,7 +95,6 @@ export default function Contact() {
                     </box>
                 </box>
                 <form id='contact_form' onSubmit={formSubmit}>
-                    {/* <h3>Envie a mensagem</h3> */}
                         <box>
                             <input type='text' name='name' placeholder='Nome' required></input>
                             <label>Nome</label>
@@ -105,7 +111,7 @@ export default function Contact() {
                             <textarea type='text' name='message' style={{ height: '200px', padding: '20px' }} placeholder='Mensagem' required></textarea>
                             <label>Mensagem</label>
                         </box>
-                        <button type='submit'><span>Enviar</span><img src={arrow}/><img src={correct}/><img src={loading} className='loading'/></button>
+                        <button type='submit'><span>Enviar</span><img className='a' src={arrow}/><img className='b' src={correct}/><img className='c' src={x}/><img src={loading} className='loading'/></button>
                     </form>
             </section>
         </>
