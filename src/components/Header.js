@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 
 import logo from '../images/logo.svg'
 
+import Menu from './Menu.js'
+
 export default function Header() {
     return (
         <header>
@@ -11,6 +13,7 @@ export default function Header() {
                 <Link to={'contact'}>Contato</Link>
                 <Link to={'development'}>Desenvolvimento</Link>
             </box>
+            <Menu />
         </header>
     )
 }

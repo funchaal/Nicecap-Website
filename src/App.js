@@ -32,6 +32,7 @@ function App() {
   let CURRENT_SCROLL = 0
 
   function scroller (e) {
+    document.getElementById('menu').classList.remove('show')
     const last_scroll = CURRENT_SCROLL
     CURRENT_SCROLL = window.scrollY
     const header = document.querySelector('header')
