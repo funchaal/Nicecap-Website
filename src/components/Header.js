@@ -9,10 +9,10 @@ export default function Header() {
         <header>
             <Link to={'/'} id='logo_link'><img src={logo} id='logo'></img></Link>
             <div style={{ width: '2px', height: '30px', backgroundColor: 'white', borderRadius: '10px', margin: '0 5px 0 35px' }} />
-            <box>
+            <div>
                 <Link to={'contact'}>Contato</Link>
                 <Link to={'development'}>Desenvolvimento</Link>
-            </box>
+            </div>
             <Menu />
         </header>
     )

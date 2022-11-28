@@ -169,7 +169,7 @@ header::before {
   content: '';
   width: 100%;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0.948);
+  background-color: rgba(0, 0, 0, 0.970);
   position: fixed;
   top: 0;
   left: 0;
@@ -260,14 +260,14 @@ header {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.047), transparent);
 }
 
-header box a {
+header div > a {
   position: relative;
   margin-left: 30px;
   font-size: 1.05rem;
   font-weight: 500;
 }
 
-header box a::after {
+header div > a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -279,7 +279,7 @@ header box a::after {
   transition-duration: 200ms;
 }
 
-header box a:hover::after {
+header div > a:hover::after {
   width: 60%;
 }
 
@@ -593,10 +593,10 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   right: 0;
   width: 250px;
   height: 100vh;
-  border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   padding: 80px 10px 10px 10px;
-  background-color: rgba(15, 15, 15, 0.992);
+  background-color: rgba(0, 0, 0, 0.970);
+  border-left: 1px rgb(29, 29, 29) solid;
   transform: translateX(250px);
   transition-duration: 200ms;
 }
@@ -612,7 +612,7 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   border-radius: 15px;
   padding-left: 15px;
   /* border: 1px rgb(84, 84, 84) solid; */
-  background-color: rgb(40, 40, 40);
+  /* background-color: rgb(40, 40, 40); */
   list-style: none;
 }
 
@@ -681,12 +681,16 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   }
   html section[land='yes'] {
     justify-content: center;
-    padding: 0 20px;
+    padding: 0 20px !important;
   }
   html section[land='yes'] box {display: flex;
     flex-direction: column;
     align-items: center;
     width: min-content
+  }
+  html section[land='yes']:not(#home) {
+    height: 35%;
+    min-height: 200px;
   }
   html section[land='yes'] box p {
     width: 100%;
@@ -808,6 +812,9 @@ form box input:focus ~ label, form box textarea:focus ~ label {
 }
 
 @media (max-width: 600px) {
+  html section[land='yes']:not(#home) {
+    height: 30%;
+  }
   #contact ~ section:last-of-type {
     padding-top: 40px !important;
   }
@@ -827,22 +834,19 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   form box:nth-child(3) {
     width: 100%;
   }
-  #contact {
-    height: 30%;
-    min-height: 200px;
-  }
   header {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  header > *:not(#logo_link):not(#logo):not(#menu):not(#menu_icon) {
-    visibility: hidden !important;
+  header > div:not(#menu):not(#menu_icon) {
+    display: none;
   }
   iframe {
     margin: 50px 0 0 0;
-    width: 100vw;
+    width: 100%;
     height: calc(100vw * 0.55);
     max-width: unset;
+    max-height: unset;
     border-radius: 0;
   }
 }
