@@ -115,7 +115,7 @@ header.float.show {
 
 form button.error {
   background-color: red;
-  animation: shake 1000ms ease-in-out forwards;
+  animation: shake 500ms ease-in-out forwards;
 }
 
 form button .c {
@@ -169,7 +169,7 @@ header::before {
   content: '';
   width: 100%;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0.970);
+  background-color: rgb(9, 8, 12);
   position: fixed;
   top: 0;
   left: 0;
@@ -190,6 +190,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   background-color: white;
+  border-radius: 10px;
 }
 
 #contact > box {
@@ -314,7 +315,7 @@ html section[land] {
 
 #home box button {
   cursor: pointer;
-  width: 150px;
+  width: 160px;
   height: 40px;
   background-color: rgba(0, 149, 255, 0.911);
   font-size: 1.05rem;
@@ -591,14 +592,16 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   z-index: 1;
   top: 0;
   right: 0;
-  width: 250px;
+  width: 270px;
   height: 100vh;
-  border-bottom-left-radius: 15px;
+  border-top-left-radius: 20px;
+  /* border-bottom-left-radius: 20px; */
   padding: 80px 10px 10px 10px;
-  background-color: rgba(0, 0, 0, 0.970);
+  background-color: rgb(16, 14, 21);
   border-left: 1px rgb(29, 29, 29) solid;
-  transform: translateX(250px);
-  transition-duration: 200ms;
+  transform: translateX(270px);
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 #menu.show {
@@ -607,13 +610,18 @@ form box input:focus ~ label, form box textarea:focus ~ label {
 
 #menu li {
   width: 100%;
-  height: 40px;
+  height: 45px;
   margin-bottom: 5px;
   border-radius: 15px;
   padding-left: 15px;
   /* border: 1px rgb(84, 84, 84) solid; */
   /* background-color: rgb(40, 40, 40); */
   list-style: none;
+  transition-duration: 200ms;
+}
+
+#menu li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 #menu li > a {
@@ -624,9 +632,30 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   align-items: center;
 }
 
+#menu li > a > img {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  margin-left: 5px;
+}
+
 #menu li > a > span {
-  font-size: 1.1rem;
+  display: block;
+  margin-left: 55px;
+  font-size: 1rem;
   color: white;
+  transition-duration: 200ms;
+}
+
+#menu li:hover > a > span {
+  color: cyan;
+}
+
+#menu .container > span {
+  display: block;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  color: rgb(145, 145, 145);
 }
 
 #menu_icon {
@@ -763,13 +792,16 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   #home > box > div {
     margin-top: 40px !important;
   }
+  #home {
+    min-height: 700px;
+  }
   #home::before {
     content: '';
     width: 100%;
     height: 90%;
-    min-height: 900px;
+    min-height: 700px;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.618);
+    background-color: rgba(0, 0, 0, 0.74);
   }
 }
 
@@ -779,12 +811,6 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   }
   h2 {
     font-size: 1.8rem;
-  }
-}
-
-@media (min-width: 601px) {
-  #menu, #menu_icon {
-    display: none;
   }
 }
 
