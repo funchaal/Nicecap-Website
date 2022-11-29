@@ -597,7 +597,7 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   height: 100vh;
   border-top-left-radius: 20px;
   padding: 50px 10px 10px 10px;
-  background-color: rgb(17, 17, 19);
+  background-color: rgb(31, 31, 34);
   transform: translateX(280px);
   transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
