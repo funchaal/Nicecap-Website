@@ -30,7 +30,7 @@ header.float {
   padding-bottom: 0;
 }
 
-header.float * {
+header.float > * {
   opacity: 0;
   visibility: hidden;
   transition-duration: 300ms;
@@ -38,12 +38,12 @@ header.float * {
   pointer-events: none;
 }
 
-header.float.off * {
+header.float.off > * {
   transition-duration: 0ms !important;
   transition-delay: 0ms !important;
 }
 
-header.float.show * {
+header.float.show > * {
   pointer-events: all;
   opacity: 100%;
   visibility: visible;
@@ -170,7 +170,7 @@ header::before {
   content: '';
   width: 100%;
   height: 60px;
-  background-color: rgb(9, 8, 12);
+  background-color: rgba(4, 4, 6, 0.97);
   position: fixed;
   top: 0;
   left: 0;
@@ -597,11 +597,11 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   height: 100vh;
   border-top-left-radius: 20px;
   padding: 50px 10px 10px 10px;
-  background-color: rgb(16, 14, 21);
+  background-color: rgb(17, 17, 19);
   transform: translateX(280px);
   transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  box-shadow: -2px 0px 20px -3px rgba(0,0,0,0.75);
+  box-shadow: -2px 0px 20px -3px rgba(0, 0, 0, 0.501);
 }
 
 #menu.show {
@@ -611,7 +611,7 @@ form box input:focus ~ label, form box textarea:focus ~ label {
 #menu li {
   width: 100%;
   height: 45px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   border-radius: 15px;
   padding-left: 15px;
   /* border: 1px rgb(84, 84, 84) solid; */
