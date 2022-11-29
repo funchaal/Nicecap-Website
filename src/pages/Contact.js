@@ -3,7 +3,9 @@ import {
     RouterProvider, 
     Link, 
     Route
-  } from "react-router-dom";
+  } from "react-router-dom"
+
+  import { useEffect } from "react"
 
   import instagram from '../images/icons/instagram_color_2.svg'
   import youtube from '../images/icons/youtube_color.svg'
@@ -15,6 +17,12 @@ import {
   import sendMessage from '../modules/sendMessage.js'
 
 export default function Contact() {
+    useEffect(() => {
+        const menu = document.getElementById('menu')
+        menu.querySelectorAll('.container li').forEach((val) => val.classList.remove('on'))
+        menu.querySelector('.container li[reference="/contact"]').classList.add('on')
+    })
+
     const [submitable, setSubmitable] = useState(true)
 
     async function formSubmit(e) {

@@ -1,6 +1,7 @@
 import and from '../images/Download android.svg'
 import app from '../images/Download_on_the_App_Store_Badge_PTBR_RGB_wht_100317.svg'
 import { useNavigate } from "react-router-dom"
+import { useEffect } from 'react'
 
 import {
     createBrowserRouter, 
@@ -11,6 +12,12 @@ import {
 
 export default function Home_1() {
     const navigate = useNavigate()
+
+    useEffect(() => {
+        const menu = document.getElementById('menu')
+        menu.querySelectorAll('.container li').forEach((val) => val.classList.remove('on'))
+        menu.querySelector('.container li[reference="/"]').classList.add('on')
+    })
     return(
         <section id='home' land='yes'>
             <box>
