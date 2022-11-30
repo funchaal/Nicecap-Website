@@ -56,6 +56,7 @@ header.float.show {
 
 #message_box {
   position: fixed;
+  z-index: 1;
   top: 30px;
   left: 0;
   display: flex;
