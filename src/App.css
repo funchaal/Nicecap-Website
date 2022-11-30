@@ -404,7 +404,7 @@ form input, form textarea {
   border-radius: 30px;
   font-size: 1rem;
   color: white;
-  background-color: rgb(87, 87, 87);
+  background-color: rgb(81, 81, 81);
   resize: none;
 }
 
@@ -597,7 +597,7 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   height: 100vh;
   border-top-left-radius: 20px;
   padding: 50px 10px 10px 10px;
-  background-color: rgb(31, 31, 34);
+  background-color: rgb(42, 42, 46);
   transform: translateX(280px);
   transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
@@ -617,7 +617,7 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   /* border: 1px rgb(84, 84, 84) solid; */
   /* background-color: rgb(40, 40, 40); */
   list-style: none;
-  transition-duration: 200ms;
+  transition-duration: 400ms;
 }
 
 #menu li:hover {
@@ -657,8 +657,8 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   transition-duration: 200ms;
 }
 
-#menu li:hover > a > span {
-  color: cyan;
+#menu li:hover > a {
+  opacity: 100%;
 }
 
 #menu .container > span {
