@@ -1,6 +1,6 @@
 export default function Home_3() {
     return (
-        <section>
+        <section style={{ backgroundColor: 'rgb(40, 40, 40)' }} className='reverse'>
             <box style={{  }}>
                 <h3>Origem da ideia</h3>
                 <p>Nesse vídeo podemos notar que mesmo com a muleta para identificar obstáculos a sua volta, o deficiente ainda sofreu uma colisão com o caminhão por ter a parte superior do seu corpo desprotegida. Dessa forma, o Nicecap é útil para evitar esse tipo de incidente.</p>

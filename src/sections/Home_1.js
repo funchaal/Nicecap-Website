@@ -19,7 +19,8 @@ export default function Home_1() {
         menu.querySelector('.container li[reference="/"]').classList.add('on')
     })
     return(
-        <section id='home' land='yes'>
+        <>
+        <section id='home' land='yes' className='no-reverse'>
             <box>
                 <h1>Nicecap</h1>
                 <h2>Por um mundo mais acessível</h2>
@@ -36,5 +37,9 @@ export default function Home_1() {
                 </box>
             </box>
         </section>
+        <section style={{ height: '20%', padding: '40px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='reverse'>
+            <span style={{ fontSize: '1.5rem', textAlign: 'center' }}>Buscamos inovar para uma parcela da sociedade abandonada pelas BigTechs</span>
+        </section>
+        </>
     )
 }

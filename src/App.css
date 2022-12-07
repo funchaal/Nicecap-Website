@@ -195,6 +195,15 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
+#autors > box > img {
+  min-width: 100vw;
+  max-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 #contact > box {
   display: flex;
   flex-direction: column;
@@ -296,7 +305,7 @@ html section[land] {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top right;
-  padding: 0 8% 0 10%;
+  padding: 0 8% 0 8%;
 }
 
 #contact {
@@ -307,7 +316,9 @@ html section[land] {
 
 #home {
   background-image: url(./images/2795.png);
+  /* background-color: rgb(28, 27, 37); */
   height: 90%;
+  justify-content: flex-start;
 }
 
 #home box {
@@ -333,6 +344,63 @@ html section[land] {
   margin-top: 10px;
 }
 
+#ods_container {
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+#ods_container h3 {
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+#ods_container h3::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 2px;
+  border-radius: 10px;
+  background-color: white;
+  top: -80px;
+  left: calc(50% - 300px / 2);
+}
+
+#ods_container .box {
+  max-width: calc(100vw - 20px);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#ods_container .item {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: white; */
+  border-radius: 20px;
+  margin: 0 20px;
+  margin-bottom: 50px;
+}
+
+#ods_container .item img {
+  width: 200px;
+  /* border: 2px solid white; */
+  border-radius: 40px;
+  margin-bottom: 30px;
+}
+
+#ods_container .item span {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
 section {
   position: relative;
   display: flex;
@@ -340,34 +408,45 @@ section {
   align-items: center;
   width: 100%;
   height: fit-content;
+  flex-wrap: wrap;
 }
 
-section:nth-child(even) {
+section.reverse {
   flex-direction: row-reverse;
-  padding: 0 9vw 0 0;
+  justify-content: space-evenly;
+  padding: 0 0vw 0 0;
   background-color: rgb(25, 25, 25);
 }
 
-section:nth-child(odd) {
+section.no-reverse {
   flex-direction: row;
-  padding: 0 0 0 9vw;
+  justify-content: space-evenly;
+  padding: 0 0vw 0 0vw;
   background-color: rgb(34, 34, 34);
 }
 
 section > box > p {
-  width: 38vw;
+  position: relative;
+  width: 45vw;
   margin-bottom: 10px;
   font-size: 1.3rem;
   font-weight: 300;
 }
 
-section:nth-child(odd) > img[background] {
+section > img {
+  position: relative;
+  width: 32vw;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+section:nth-child(even) > img[background] {
   width: 42vw;
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
   max-height: 100%;
 }
 
-section:nth-child(even) > img[background] {
+section:nth-child(odd) > img[background] {
   width: 45vw;
   clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);
   max-height: 100%;
@@ -375,7 +454,7 @@ section:nth-child(even) > img[background] {
 
 iframe {
   border-radius: 20px;
-  margin: 7% 0 7% 7vw;
+  /* margin: 7% 0 7% 7vw; */
   width: calc(38vw);
   height: calc(38vw*0.55);
 }
@@ -394,8 +473,14 @@ h2 {
 }
 
 h3 {
+  position: relative;
   font-size: 2rem;
   margin-bottom: 10px;
+}
+
+html section:not([land='yes']) {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 form input, form textarea {
@@ -522,7 +607,7 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 6% 5vw 6% 50px;
+  margin: 0 20px;
 }
 
 #autor_ctn box {
@@ -530,12 +615,17 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 198px;
+  min-width: 210px;
   max-width: 198px;
-  height: 270px;
+  height: 275px;
   background-color: rgba(255, 255, 255, 0.941);
-  border-radius: 20px;
-  margin: 15px 1.5vw 15px 0;
+  border-radius: 25px;
+  margin: 50px 20px 20px 20px;
+  transition-duration: 500ms;
+}
+
+#autor_ctn box:hover {
+  transform: scale(1.05);
 }
 
 #autor_ctn box > img {
@@ -712,6 +802,12 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   transform: rotate(-45deg);
 }
 
+#footer {
+  width: 100%;
+  /* height: 80px; */
+  background-color: rgb(0, 152, 228);
+}
+
 @media (max-width: 1100px) {
   h1 {
     font-size: 4rem;
@@ -755,7 +851,7 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   html section:not([land='yes']) {
     flex-direction: column !important;
     align-items: center !important;
-    padding: 80px 0 0 0 !important;
+    padding: 50px 0;
   }
   html section > box > p {
     width: 800px;
@@ -772,15 +868,12 @@ form box input:focus ~ label, form box textarea:focus ~ label {
     max-height: 350px !important;
   }
   iframe {
-    border-radius: 20px;
-    margin: 80px 0 70px 0;
+    border-radius: 10px;
+    margin-top: 60px;
     width: calc(600px);
     height: calc(600px*0.55);
     max-width: calc(100vw - 50px);
     max-height: calc((100vw - 50px) * 0.55);
-  }
-  #autor_ctn {
-    margin: 9% 40px 6% 40px;
   }
   
   #contact ~ section:last-of-type {
@@ -805,6 +898,7 @@ form box input:focus ~ label, form box textarea:focus ~ label {
   }
   #home {
     min-height: 700px;
+    justify-content: center;
   }
   #home::before {
     content: '';
@@ -813,6 +907,10 @@ form box input:focus ~ label, form box textarea:focus ~ label {
     min-height: 700px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.74);
+  }
+  section > img {
+    width: 500px;
+    margin-top: 60px;
   }
 }
 
@@ -849,14 +947,17 @@ form box input:focus ~ label, form box textarea:focus ~ label {
 }
 
 @media (max-width: 600px) {
+  #ods_container h3 {
+    margin-top: 30px;
+  }
+  #ods_container h3::after {
+    top: -35px;
+  }
   html section[land='yes']:not(#home) {
     height: 30%;
   }
   #contact ~ section:last-of-type {
     padding-top: 40px !important;
-  }
-  html section:not([land='yes']) {
-    padding: 50px 0 0 0 !important;
   }
   html section > img[background] {
     margin-top: 50px;
@@ -885,6 +986,13 @@ form box input:focus ~ label, form box textarea:focus ~ label {
     max-width: unset;
     max-height: unset;
     border-radius: 0;
+  }
+  section > img, section > iframe {
+    margin-bottom: -50px;
+    border-radius: 0;
+  }
+  #ods_container h3 {
+    margin-bottom: 60px;
   }
 }
 

@@ -85,7 +85,7 @@ export default function Contact() {
                     {/* <h2>Envie uma mensagem para nós</h2> */}
                 </box>
             </section>
-            <section style={{ minHeight: '300px' }}>
+            <section style={{ minHeight: '300px' }} className='no-reverse'>
                 <box>
                     <h3>Informações de contato</h3>
                     <p style={{ fontSize: '1rem', fontWeight: '300', marginBottom: '20px' }}>Envie uma mensagem a qualquer momento em um dos nossos meios abaixo ou no formulário ao lado. Tentaremos responder o mais breve possível.</p>

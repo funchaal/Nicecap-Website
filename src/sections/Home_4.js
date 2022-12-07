@@ -4,14 +4,16 @@ import aline from '../images/autors/aline.jpeg'
 import instagram_ic from '../images/icons/instagram_color.svg'
 import linkedin_ic from '../images/icons/linkedin_color.svg'
 import rf from '../images/icons/rf.svg'
+import background from '../images/coiso.jpg'
 
 export default function Home_4() {
     return (
-        <section id='autors'>
-            <box>
-                <h3>Autores</h3>
-                <p>O Nicecap foi idealizado e construído pelos primos Rafael Funchal e Vitor Henrique Funchal Nascimento.</p>
-                <p>Aline Patriota Pereira foi a orientadora do projeto.</p>
+        <section id='autors' className='no-reverse' style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)', flexDirection: 'column' }}>
+            <box style={{  }}>
+            <img src={background}/>
+                <h3 style={{ textAlign: 'center' }}>Autores</h3>
+                <p style={{ textAlign: 'center' }}>O Nicecap foi idealizado e construído pelos primos Rafael Funchal e Vitor Henrique Funchal Nascimento.</p>
+                <p style={{ textAlign: 'center' }}>Aline Patriota Pereira foi a orientadora do projeto.</p>
             </box>
             <div id='autor_ctn'>
                 <box>

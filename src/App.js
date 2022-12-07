@@ -7,6 +7,7 @@ import Contact from './pages/Contact.js'
 import Home from './pages/Home.js'
 import Support from './pages/Support.js'
 import Header from './components/Header.js'
+import Footer from './components/Footer.js'
 
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
@@ -55,6 +56,7 @@ function App() {
           <Route path='/contact' element={<Contact />}></Route>
           <Route path='/support' element={<Support />}></Route>
         </Routes>
+      <Footer />
       </BrowserRouter>
     </div>
   );
