@@ -22,15 +22,15 @@ export default function Home_2() {
                 <div className='box'>
                     <div className='item'>
                         <img src={ods_reducao}/>
-                        <span>Desenvolvimento, inovação e infraestrutura.</span>
+                        <span>Redução das <br/>desigualdades</span>
                     </div>
                     <div className='item'>
                         <img src={ods_inovacao}/>
-                        <span>Redução das desigualdades.</span>
+                        <span>Desenvolvimento, inovação <br/>e infraestrutura</span>
                     </div> 
                     <div className='item' style={{ marginBottom: 0 }}>
                         <img src={ods_saude}/>
-                        <span>Saúde e bem-star.</span>
+                        <span>Saúde e bem-star</span>
                     </div> 
                 </div>
             </box>
